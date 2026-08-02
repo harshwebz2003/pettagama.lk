@@ -380,13 +380,35 @@ export default function ProductDetailPage() {
         {relatedProducts.length > 0 && (
           <div className="space-y-6">
             <h3 className="text-xl font-black text-slate-900">Related Craft Supplies</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
               {relatedProducts.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
             </div>
           </div>
         )}
+
+        {/* Fixed Mobile Purchase Bar */}
+        <div className="fixed bottom-[60px] left-0 right-0 z-30 bg-white/95 backdrop-blur-md p-3 border-t border-slate-200 shadow-2xl flex items-center gap-2 lg:hidden">
+          <div className="flex-1 min-w-0">
+            <div className="text-[10px] text-slate-400 uppercase font-bold truncate">{product.name}</div>
+            <div className="text-sm font-black text-royal-700">Rs. {product.price.toLocaleString()}</div>
+          </div>
+          <button
+            onClick={handleAddToCart}
+            className="bg-royal-600 hover:bg-royal-700 text-white font-extrabold text-xs px-4 py-2.5 rounded-xl shadow-md flex items-center space-x-1 shrink-0"
+          >
+            <ShoppingBag className="w-4 h-4" />
+            <span>Add to Cart</span>
+          </button>
+          <button
+            onClick={handleWhatsAppOrder}
+            className="bg-emerald-600 hover:bg-emerald-700 text-white p-2.5 rounded-xl shadow-md flex items-center justify-center shrink-0"
+            aria-label="Order via WhatsApp"
+          >
+            <MessageCircle className="w-4 h-4" />
+          </button>
+        </div>
       </div>
     </div>
   );
