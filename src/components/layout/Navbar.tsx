@@ -9,7 +9,7 @@ export const Navbar: React.FC = () => {
   const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
 
   return (
-    <nav className="hidden lg:block bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 text-white border-b border-amber-800/30 shadow-sm">
+    <nav className="hidden lg:block bg-gradient-to-r from-[#0277BD] via-[#29ABE2] to-[#0288D1] text-white border-b border-sky-300/30 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-11">
 
@@ -19,7 +19,7 @@ export const Navbar: React.FC = () => {
               onMouseEnter={() => setIsCategoryDropdownOpen(true)}
               onMouseLeave={() => setIsCategoryDropdownOpen(false)}
               onClick={() => setIsCategoryDropdownOpen(!isCategoryDropdownOpen)}
-              className="bg-amber-800/30 hover:bg-amber-800/50 text-white px-5 py-2.5 font-bold text-xs uppercase tracking-wider flex items-center space-x-2 transition-colors rounded-t-lg"
+              className="bg-black/15 hover:bg-black/25 text-white px-5 py-2.5 font-bold text-xs uppercase tracking-wider flex items-center space-x-2 transition-colors rounded-t-lg"
             >
               <Menu className="w-4 h-4" />
               <span>All Craft Categories</span>

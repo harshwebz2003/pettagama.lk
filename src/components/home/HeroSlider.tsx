@@ -69,13 +69,13 @@ export const HeroSlider: React.FC = () => {
   return (
     <section className="hero-logo-bg relative text-slate-800 overflow-hidden py-12 pb-20 sm:py-24 md:py-32 border-b border-blue-100/60">
       
-      {/* Logo-color Ambient Blobs — Blue & Red */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-300/30 rounded-full blur-[140px] pointer-events-none animate-blob" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-red-300/25 rounded-full blur-[140px] pointer-events-none animate-blob" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-100/20 rounded-full blur-[160px] pointer-events-none" />
+      {/* Ocean Breeze Ambient Blobs */}
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#7FCDFF]/40 rounded-full blur-[140px] pointer-events-none animate-blob" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#29ABE2]/30 rounded-full blur-[140px] pointer-events-none animate-blob" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#DFF7FF]/50 rounded-full blur-[160px] pointer-events-none" />
 
-      {/* Blue grid mesh */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1565C015_1px,transparent_1px),linear-gradient(to_bottom,#1565C015_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
+      {/* Ocean Breeze Grid Mesh */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#29ABE215_1px,transparent_1px),linear-gradient(to_bottom,#29ABE215_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <AnimatePresence mode="wait">
@@ -96,9 +96,9 @@ export const HeroSlider: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1 }}
-                className="inline-flex items-center space-x-2 bg-white/80 border border-amber-200/60 text-amber-700 text-xs font-black px-4 py-2 rounded-full shadow-sm backdrop-blur-xl"
+                className="inline-flex items-center space-x-2 bg-white/90 border border-[#7FCDFF]/60 text-[#0277BD] text-xs font-black px-4 py-2 rounded-full shadow-sm backdrop-blur-xl"
               >
-                <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-current animate-pulse" />
+                <Sparkles className="w-3.5 h-3.5 text-[#29ABE2] fill-current animate-pulse" />
                 <span className="tracking-widest uppercase">{slide.badge}</span>
               </motion.div>
 
@@ -122,7 +122,7 @@ export const HeroSlider: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-slate-500 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal"
+                className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal"
               >
                 {slide.description}
               </motion.p>
@@ -136,7 +136,7 @@ export const HeroSlider: React.FC = () => {
               >
                 <Link
                   href={slide.primaryCta.link}
-                  className="w-full sm:w-auto bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-amber-800 text-white font-extrabold px-9 py-4 rounded-2xl shadow-lg flex items-center justify-center space-x-3 transition-all transform hover:-translate-y-1 text-xs uppercase tracking-widest animate-glow-pulse"
+                  className="w-full sm:w-auto bg-gradient-to-r from-[#29ABE2] via-[#0288D1] to-[#01579B] hover:from-[#0288D1] hover:to-[#01579B] text-white font-extrabold px-9 py-4 rounded-2xl shadow-lg flex items-center justify-center space-x-3 transition-all transform hover:-translate-y-1 text-xs uppercase tracking-widest animate-glow-pulse"
                 >
                   <ShoppingBag className="w-4 h-4" />
                   <span>{slide.primaryCta.text}</span>

@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 /* ============================================================
-   OCEAN BREEZE PALETTE  —  #DFF7FF · #7FCDFF · #29ABE2
+   OCEAN BREEZE GRADIENT SYSTEM — #DFF7FF · #7FCDFF · #29ABE2
    ============================================================ */
 
 @layer base {
   :root {
-    --ob-lightest: #DFF7FF;   /* pale sky */
-    --ob-mid:      #7FCDFF;   /* soft ocean */
-    --ob-deep:     #29ABE2;   /* true ocean blue */
+    --ob-lightest: #DFF7FF;   /* Light Sky Blue */
+    --ob-mid:      #7FCDFF;   /* Soft Ocean Blue */
+    --ob-deep:     #29ABE2;   /* Deep Ocean Blue */
     --ob-white:    #FFFFFF;
   }
 
@@ -19,163 +19,145 @@
     background: linear-gradient(
       135deg,
       #DFF7FF 0%,
-      #FFFFFF 25%,
-      #7FCDFF 50%,
-      #FFFFFF 75%,
+      #7FCDFF 30%,
+      #DFF7FF 60%,
+      #29ABE2 85%,
       #DFF7FF 100%
     );
     background-size: 400% 400%;
-    animation: oceanGradientShift 18s ease infinite;
+    animation: oceanGradientShift 16s ease-in-out infinite;
     min-height: 100vh;
   }
 
   ::selection {
-    background: rgba(41, 171, 226, 0.28);
-    color: #0077aa;
+    background: rgba(41, 171, 226, 0.35);
+    color: #02598b;
   }
 }
 
-/* ============================================================
-   ANIMATED GRADIENT KEYFRAMES
-   ============================================================ */
+/* Keyframes for Smooth Ocean Breeze Gradient Shift */
 @keyframes oceanGradientShift {
-  0%   { background-position: 0%   50%; }
-  25%  { background-position: 100%  0%; }
-  50%  { background-position: 100% 100%; }
-  75%  { background-position: 0%  100%; }
-  100% { background-position: 0%   50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes ambientBlob {
-  0%, 100% { transform: translate(0px, 0px) scale(1);    opacity: 0.22; }
-  33%       { transform: translate(30px,-50px) scale(1.12); opacity: 0.35; }
-  66%       { transform: translate(-20px,20px) scale(0.95); opacity: 0.28; }
+  0%, 100% { transform: translate(0px, 0px) scale(1); opacity: 0.30; }
+  33%       { transform: translate(40px, -50px) scale(1.15); opacity: 0.45; }
+  66%       { transform: translate(-30px, 30px) scale(0.90); opacity: 0.35; }
 }
 
 @keyframes textGradientShimmer {
-  0%   { background-position: 0%   50%; }
+  0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
-  100% { background-position: 0%   50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes floatGentle {
-  0%, 100% { transform: translateY(0px)   rotate(0deg); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
   50%       { transform: translateY(-10px) rotate(1deg); }
 }
 
 @keyframes buttonGlowPulse {
-  0%, 100% { box-shadow: 0 0 18px rgba(41,171,226,0.35), 0 0 36px rgba(127,205,255,0.18); }
-  50%       { box-shadow: 0 0 32px rgba(41,171,226,0.60), 0 0 55px rgba(127,205,255,0.32); }
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(41, 171, 226, 0.40), 0 0 40px rgba(127, 205, 255, 0.25); 
+  }
+  50% { 
+    box-shadow: 0 0 35px rgba(41, 171, 226, 0.70), 0 0 60px rgba(127, 205, 255, 0.45); 
+  }
 }
 
-/* ============================================================
-   ANIMATED UTILITY CLASSES
-   ============================================================ */
+/* Utility Animations */
 .animate-blob         { animation: ambientBlob 12s ease-in-out infinite; }
 .animate-float-gentle { animation: floatGentle 6s ease-in-out infinite; }
 .animate-glow-pulse   { animation: buttonGlowPulse 3s infinite; }
 
-/* ============================================================
-   GRADIENT TEXT — OCEAN BREEZE
-   ============================================================ */
+/* Gradient Typography — Ocean Breeze */
 .text-shimmer-luxury {
   background: linear-gradient(
     135deg,
-    #29ABE2 0%,
-    #7FCDFF 35%,
-    #0077AA 65%,
-    #29ABE2 100%
+    #0277BD 0%,
+    #29ABE2 35%,
+    #7FCDFF 65%,
+    #0277BD 100%
   );
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textGradientShimmer 5s ease infinite;
+  animation: textGradientShimmer 6s ease infinite;
 }
 
 .text-gradient-ocean {
-  background: linear-gradient(135deg, #29ABE2 0%, #7FCDFF 100%);
+  background: linear-gradient(135deg, #0277BD 0%, #29ABE2 50%, #7FCDFF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* ============================================================
-   GLASSMORPHISM — OCEAN TINTED
-   ============================================================ */
+/* Glassmorphism Styles — Ocean Breeze */
 .glass-header {
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border-bottom: 1px solid rgba(127, 205, 255, 0.35);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(127, 205, 255, 0.4);
 }
 
 .glass-card-blue {
   background: linear-gradient(
     135deg,
-    rgba(223, 247, 255, 0.82) 0%,
-    rgba(255, 255, 255, 0.92) 100%
+    rgba(223, 247, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.95) 100%
   );
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(127, 205, 255, 0.30);
+  border: 1px solid rgba(127, 205, 255, 0.4);
 }
 
 .glass-card-light {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
 .glass-button {
-  background: rgba(223, 247, 255, 0.60);
+  background: rgba(223, 247, 255, 0.70);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(127, 205, 255, 0.35);
+  border: 1px solid rgba(127, 205, 255, 0.50);
 }
 .glass-button:hover {
-  background: rgba(223, 247, 255, 0.88);
-  border-color: rgba(41, 171, 226, 0.50);
+  background: rgba(223, 247, 255, 0.95);
+  border-color: rgba(41, 171, 226, 0.70);
 }
 
-/* Glow borders */
-.glow-border-ocean {
-  box-shadow: 0 0 20px rgba(41,171,226,0.22), inset 0 0 12px rgba(127,205,255,0.10);
-}
-
-/* ============================================================
-   HERO SECTION  —  OCEAN BREEZE ANIMATED BG
-   ============================================================ */
+/* Section Backgrounds */
 .hero-logo-bg {
   background: linear-gradient(
     135deg,
     #DFF7FF 0%,
-    #FFFFFF 30%,
-    #7FCDFF 60%,
-    #EBF9FF 100%
+    #7FCDFF 40%,
+    #DFF7FF 70%,
+    #29ABE2 100%
   );
   background-size: 300% 300%;
-  animation: oceanGradientShift 12s ease infinite;
+  animation: oceanGradientShift 14s ease-in-out infinite;
 }
 
-/* ============================================================
-   SECTION ALTERNATE BACKGROUNDS
-   ============================================================ */
 .section-blue-tint {
-  background: linear-gradient(135deg, #DFF7FF 0%, #FFFFFF 50%, #EBF9FF 100%);
+  background: linear-gradient(135deg, rgba(223, 247, 255, 0.7) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(127, 205, 255, 0.4) 100%);
 }
 
 .section-mid-tint {
-  background: linear-gradient(135deg, #EBF9FF 0%, #FFFFFF 50%, #D0F0FF 100%);
+  background: linear-gradient(135deg, rgba(127, 205, 255, 0.3) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(223, 247, 255, 0.6) 100%);
 }
 
-/* ============================================================
-   CUSTOM SCROLLBAR — OCEAN BREEZE
-   ============================================================ */
-::-webkit-scrollbar       { width: 7px; height: 7px; }
+/* Custom Scrollbar — Ocean Breeze */
+::-webkit-scrollbar       { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: #DFF7FF; }
 ::-webkit-scrollbar-thumb { background: #7FCDFF; border-radius: 9999px; }
 ::-webkit-scrollbar-thumb:hover { background: #29ABE2; }
 
-/* Hide scrollbar utility */
+/* Utilities */
 .scrollbar-none::-webkit-scrollbar { display: none; }
 .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
