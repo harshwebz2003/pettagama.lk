@@ -10,6 +10,7 @@ import { MobileBottomNav } from '@/components/layout/MobileBottomNav';
 import { FloatingWhatsApp } from '@/components/layout/FloatingWhatsApp';
 import { QuickViewModal } from '@/components/common/QuickViewModal';
 import { Toast } from '@/components/common/Toast';
+import { PosterAdModal } from '@/components/common/PosterAdModal';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -52,6 +53,7 @@ export default function RootLayout({
           <MobileBottomNav />
           <FloatingWhatsApp />
           <QuickViewModal />
+          <PosterAdModal />
           <Toast />
         </ShopProvider>
       </body>
