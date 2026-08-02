@@ -67,15 +67,15 @@ export const HeroSlider: React.FC = () => {
   const slide = heroSlides[currentSlide];
 
   return (
-    <section className="relative bg-gradient-to-br from-[#fdf6f0] via-[#fef0e8] to-[#f5ede8] text-slate-800 overflow-hidden py-12 pb-20 sm:py-24 md:py-32 border-b border-rose-100/60">
+    <section className="hero-logo-bg relative text-slate-800 overflow-hidden py-12 pb-20 sm:py-24 md:py-32 border-b border-blue-100/60">
       
-      {/* Background Soft Ambient Blobs */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-rose-200/40 rounded-full blur-[140px] pointer-events-none animate-blob" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-200/30 rounded-full blur-[140px] pointer-events-none animate-blob" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-100/25 rounded-full blur-[160px] pointer-events-none" />
+      {/* Logo-color Ambient Blobs — Blue & Red */}
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-300/30 rounded-full blur-[140px] pointer-events-none animate-blob" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-red-300/25 rounded-full blur-[140px] pointer-events-none animate-blob" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-100/20 rounded-full blur-[160px] pointer-events-none" />
 
-      {/* Grid Mesh Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e8ddd415_1px,transparent_1px),linear-gradient(to_bottom,#e8ddd415_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
+      {/* Blue grid mesh */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1565C015_1px,transparent_1px),linear-gradient(to_bottom,#1565C015_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <AnimatePresence mode="wait">

@@ -8,9 +8,9 @@ import { Truck, ShieldCheck, Headphones, HeartHandshake, ArrowRight, Sparkles } 
 
 export const LifestyleTrustSection: React.FC = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-[#fdf6f0] via-[#faf5f0] to-[#f5edf8] border-b border-rose-100/60 relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200/25 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-0 right-0 w-72 h-72 bg-amber-200/25 rounded-full blur-[120px] pointer-events-none" />
+    <section className="py-20 section-red-tint border-b border-red-100/50 relative overflow-hidden">
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-200/20 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-72 h-72 bg-red-200/20 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
 

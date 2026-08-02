@@ -23,7 +23,7 @@ export default function HomePage() {
   const trendingProducts = products.filter((p) => p.isNewArrival || p.badge === 'HOT').slice(0, 4);
 
   return (
-    <div className="bg-[#faf7f4] text-slate-700 min-h-screen pb-16 lg:pb-0">
+    <div className="text-slate-700 min-h-screen pb-16 lg:pb-0">
 
       {/* 1. Luxury Cinematic Hero */}
       <HeroSlider />
@@ -35,7 +35,7 @@ export default function HomePage() {
       <FeaturedEditorial />
 
       {/* 4. Best Sellers */}
-      <section id="bestsellers" className="py-20 bg-white border-b border-rose-100/60">
+      <section id="bestsellers" className="py-20 section-blue-tint border-b border-blue-100/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-10">
             <div className="flex items-center space-x-3">
@@ -72,7 +72,7 @@ export default function HomePage() {
       <FlashDeals />
 
       {/* 8. Trending Products */}
-      <section className="py-20 bg-[#fdf8f5] border-b border-rose-100/60">
+      <section className="py-20 section-red-tint border-b border-red-100/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-10">
             <div className="flex items-center space-x-3">

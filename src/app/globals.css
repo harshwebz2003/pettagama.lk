@@ -4,68 +4,100 @@
 
 @layer base {
   :root {
-    --background: 30 40% 98%;
-    --foreground: 222 47% 11%;
+    --logo-blue: #1565C0;
+    --logo-blue-light: #42A5F5;
+    --logo-blue-pale: #E3F2FD;
+    --logo-red: #E53935;
+    --logo-red-light: #EF9A9A;
+    --logo-red-pale: #FFF0EF;
+    --logo-white: #FFFFFF;
   }
 
   body {
-    @apply bg-[#faf7f4] text-slate-800 antialiased font-sans selection:bg-rose-300 selection:text-white overflow-x-hidden;
+    @apply text-slate-800 antialiased font-sans overflow-x-hidden;
+    background: linear-gradient(135deg,
+      #f0f6ff 0%,
+      #fef0ef 25%,
+      #e8f4ff 50%,
+      #fff5f5 75%,
+      #edf5ff 100%
+    );
+    background-size: 400% 400%;
+    animation: logoGradientShift 16s ease infinite;
+    min-height: 100vh;
+  }
+
+  /* Ensure text selection uses brand blue */
+  ::selection {
+    background: rgba(21, 101, 192, 0.25);
+    color: #0d47a1;
   }
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-}
-::-webkit-scrollbar-track {
-  background: #faf7f4;
-}
-::-webkit-scrollbar-thumb {
-  background: #d4c8bc;
-  border-radius: 9999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #c4a98e;
+/* ============================================
+   LOGO-INSPIRED ANIMATED BACKGROUND GRADIENT
+   Blue: #1565C0 | Red: #E53935 | White: #FFF
+   ============================================ */
+@keyframes logoGradientShift {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 100% 0%; }
+  50%  { background-position: 100% 100%; }
+  75%  { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Keyframe Animations */
+/* Ambient floating blobs using logo colors */
 @keyframes ambientBlob {
   0%, 100% {
     transform: translate(0px, 0px) scale(1);
-    opacity: 0.25;
+    opacity: 0.18;
   }
   33% {
     transform: translate(30px, -50px) scale(1.12);
-    opacity: 0.4;
+    opacity: 0.28;
   }
   66% {
     transform: translate(-20px, 20px) scale(0.95);
-    opacity: 0.3;
+    opacity: 0.22;
   }
 }
 
 @keyframes textGradientShimmer {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
 @keyframes floatGentle {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(1deg); }
+  50%       { transform: translateY(-10px) rotate(1deg); }
 }
 
 @keyframes buttonGlowPulse {
   0%, 100% {
-    box-shadow: 0 0 18px rgba(193, 139, 100, 0.3), 0 0 36px rgba(232, 160, 120, 0.15);
+    box-shadow: 0 0 18px rgba(21, 101, 192, 0.30),
+                0 0 36px rgba(66, 165, 245, 0.15);
   }
   50% {
-    box-shadow: 0 0 30px rgba(193, 139, 100, 0.55), 0 0 50px rgba(232, 160, 120, 0.3);
+    box-shadow: 0 0 30px rgba(21, 101, 192, 0.55),
+                0 0 50px rgba(66, 165, 245, 0.30);
   }
 }
 
-/* Animated Utility Classes */
+@keyframes redGlowPulse {
+  0%, 100% {
+    box-shadow: 0 0 18px rgba(229, 57, 53, 0.30),
+                0 0 36px rgba(239, 154, 154, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(229, 57, 53, 0.55),
+                0 0 50px rgba(239, 154, 154, 0.30);
+  }
+}
+
+/* ============================================
+   ANIMATED UTILITY CLASSES
+   ============================================ */
 .animate-blob {
   animation: ambientBlob 12s ease-in-out infinite;
 }
@@ -78,40 +110,68 @@
   animation: buttonGlowPulse 3s infinite;
 }
 
-/* Warm Gradient Text Styles */
+.animate-red-glow {
+  animation: redGlowPulse 3s infinite;
+}
+
+/* ============================================
+   LOGO-COLOR GRADIENT TEXT STYLES
+   ============================================ */
 .text-shimmer-luxury {
-  background: linear-gradient(135deg, #a0616d 0%, #c18b64 35%, #d4a574 60%, #a0616d 100%);
+  background: linear-gradient(135deg,
+    #1565C0 0%,
+    #42A5F5 35%,
+    #E53935 65%,
+    #1565C0 100%
+  );
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textGradientShimmer 6s ease infinite;
+  animation: textGradientShimmer 5s ease infinite;
 }
 
-.text-gradient-coral {
-  background: linear-gradient(135deg, #d4856a 0%, #c47a5e 50%, #b06e55 100%);
+.text-gradient-blue {
+  background: linear-gradient(135deg, #1565C0 0%, #42A5F5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-royal {
-  background: linear-gradient(135deg, #8b7ec8 0%, #7c6bb0 50%, #6b5a9e 100%);
+.text-gradient-red {
+  background: linear-gradient(135deg, #E53935 0%, #EF9A9A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Luxury Soft Glassmorphism Utilities */
+/* ============================================
+   GLASSMORPHISM UTILITIES (LOGO-TINTED)
+   ============================================ */
 .glass-header {
-  background: rgba(255, 253, 250, 0.82);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(210, 195, 180, 0.4);
+  border-bottom: 1px solid rgba(21, 101, 192, 0.12);
 }
 
-.glass-card-dark {
-  background: linear-gradient(135deg, rgba(255, 250, 245, 0.9) 0%, rgba(252, 245, 238, 0.95) 100%);
+.glass-card-blue {
+  background: linear-gradient(
+    135deg,
+    rgba(227, 242, 253, 0.80) 0%,
+    rgba(255, 255, 255, 0.90) 100%
+  );
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(210, 190, 170, 0.3);
+  border: 1px solid rgba(21, 101, 192, 0.15);
+}
+
+.glass-card-red {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 235, 238, 0.80) 0%,
+    rgba(255, 255, 255, 0.90) 100%
+  );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(229, 57, 53, 0.15);
 }
 
 .glass-card-light {
@@ -122,30 +182,57 @@
 }
 
 .glass-button {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.70);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(210, 190, 170, 0.3);
+  border: 1px solid rgba(21, 101, 192, 0.20);
 }
 .glass-button:hover {
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(193, 139, 100, 0.4);
+  background: rgba(255, 255, 255, 0.90);
+  border-color: rgba(21, 101, 192, 0.35);
 }
 
-/* Soft Glow Borders */
-.glow-border-royal {
-  box-shadow: 0 0 20px rgba(139, 126, 200, 0.2), inset 0 0 12px rgba(139, 126, 200, 0.1);
+/* Glow borders */
+.glow-border-blue {
+  box-shadow: 0 0 20px rgba(21, 101, 192, 0.18),
+              inset 0 0 12px rgba(21, 101, 192, 0.08);
 }
 
-.glow-border-coral {
-  box-shadow: 0 0 20px rgba(212, 133, 106, 0.25), inset 0 0 12px rgba(212, 133, 106, 0.1);
+.glow-border-red {
+  box-shadow: 0 0 20px rgba(229, 57, 53, 0.20),
+              inset 0 0 12px rgba(229, 57, 53, 0.08);
 }
 
-/* Scrollbar-none utility */
-.scrollbar-none::-webkit-scrollbar {
-  display: none;
+/* ============================================
+   HERO SECTION BACKGROUND (LOGO COLORS)
+   ============================================ */
+.hero-logo-bg {
+  background: linear-gradient(
+    135deg,
+    #f0f6ff 0%,      /* pale blue */
+    #ffffff 30%,     /* white */
+    #fff5f5 60%,     /* pale red */
+    #e8f4ff 100%     /* light blue */
+  );
+  background-size: 300% 300%;
+  animation: logoGradientShift 12s ease infinite;
 }
-.scrollbar-none {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+
+/* Section alternate backgrounds */
+.section-blue-tint {
+  background: linear-gradient(135deg, #EBF5FF 0%, #FFFFFF 50%, #F0F8FF 100%);
 }
+
+.section-red-tint {
+  background: linear-gradient(135deg, #FFF5F5 0%, #FFFFFF 50%, #FFF0EF 100%);
+}
+
+/* Custom Scrollbar — logo blue */
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: #f0f6ff; }
+::-webkit-scrollbar-thumb { background: #90CAF9; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #1565C0; }
+
+/* Hide scrollbar utility */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
