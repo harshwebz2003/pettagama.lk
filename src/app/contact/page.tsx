@@ -174,15 +174,23 @@ export default function ContactPage() {
             </div>
 
             {/* Embedded Google Map */}
-            <div className="h-[250px] rounded-3xl overflow-hidden shadow-md border-2 border-slate-200">
+            <div className="h-[260px] rounded-3xl overflow-hidden shadow-md border-2 border-slate-200 relative">
               <iframe
-                title="Pettagama.lk Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15852.123456789!2d79.9575!3d6.5854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae23769c8b74c5d%3A0x6b772b1574070a2c!2sKalutara%2C%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1680000000000!5m2!1sen!2slk"
+                title="Pettagama.lk Kalutara Map Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.5295120031374!2d79.9615262!3d6.5808944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae237fb4d31e1d5%3A0xb85760ef2bca0bbc!2sPettagama.lk!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 loading="lazy"
               />
+              <a
+                href="https://maps.app.goo.gl/mPckimUh8G6KcZ299"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-md text-royal-800 text-xs font-bold px-3 py-1.5 rounded-xl border border-slate-200 shadow-md hover:bg-royal-50 transition-colors"
+              >
+                📍 Open Google Maps
+              </a>
             </div>
           </div>
         </div>
