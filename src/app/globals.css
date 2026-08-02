@@ -37,6 +37,17 @@
   }
 }
 
+/* GPU Acceleration & Media Rendering Tuning */
+.gpu-accelerate {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+img, video {
+  content-visibility: auto;
+}
+
 /* Keyframes for Smooth Blue Gradient Shift */
 @keyframes blueGradientShift {
   0%   { background-position: 0% 50%; }
