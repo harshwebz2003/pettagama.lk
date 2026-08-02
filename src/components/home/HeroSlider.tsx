@@ -304,7 +304,7 @@ export const HeroSlider: React.FC = () => {
               >
                 <Image
                   src={slide.image}
-                  alt={slide.headlineMain || 'Pettagama Craft Showcase'}
+                  alt={slide.headlineTop || 'Pettagama Craft Showcase'}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                   priority
