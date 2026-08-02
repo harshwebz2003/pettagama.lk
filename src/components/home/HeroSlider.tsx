@@ -13,17 +13,21 @@ const HeroBackgroundVideo = memo(() => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const playVideo = () => {
-      if (videoRef.current) {
-        videoRef.current.play().catch((err) => {
-          console.log('Autoplay deferred by browser policy:', err);
-        });
+    const video = videoRef.current;
+    if (!video) return;
+
+    const playVideo = async () => {
+      try {
+        if (video.paused) {
+          await video.play();
+        }
+      } catch (err) {
+        console.log('Autoplay handled:', err);
       }
     };
 
     playVideo();
 
-    // Re-play on visibility change if user tabs back
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
         playVideo();
@@ -37,7 +41,7 @@ const HeroBackgroundVideo = memo(() => {
   }, []);
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+    <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 bg-[#DFF7FF]">
       <video
         ref={videoRef}
         autoPlay
@@ -45,7 +49,12 @@ const HeroBackgroundVideo = memo(() => {
         muted
         playsInline
         preload="auto"
-        className="w-full h-full object-cover opacity-65 mix-blend-multiply scale-105"
+        // @ts-ignore
+        disablePictureInPicture
+        // @ts-ignore
+        disableRemotePlayback
+        onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
+        className="w-full h-full object-cover opacity-65 mix-blend-multiply scale-105 transform-gpu will-change-transform"
       >
         <source src="/Create_intro_video_e-commerce_202608030043.mp4" type="video/mp4" />
       </video>

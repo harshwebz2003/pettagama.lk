@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  compress: true,
   productionBrowserSourceMaps: false,
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -18,7 +22,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'cdn.pixabay.com',
-      }
+      },
     ],
   },
 };
