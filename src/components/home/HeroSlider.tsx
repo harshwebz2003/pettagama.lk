@@ -67,7 +67,7 @@ export const HeroSlider: React.FC = () => {
   const slide = heroSlides[currentSlide];
 
   return (
-    <section className="relative bg-gradient-to-br from-[#fdf6f0] via-[#fef0e8] to-[#f5ede8] text-slate-800 overflow-hidden py-16 sm:py-24 md:py-32 border-b border-rose-100/60">
+    <section className="relative bg-gradient-to-br from-[#fdf6f0] via-[#fef0e8] to-[#f5ede8] text-slate-800 overflow-hidden py-12 pb-20 sm:py-24 md:py-32 border-b border-rose-100/60">
       
       {/* Background Soft Ambient Blobs */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-rose-200/40 rounded-full blur-[140px] pointer-events-none animate-blob" />
@@ -85,11 +85,11 @@ export const HeroSlider: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -24 }}
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center"
           >
 
             {/* Left Editorial Content Column */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left order-2 lg:order-1">
+            <div className="lg:col-span-7 space-y-5 text-center lg:text-left order-1">
               
               {/* Luxury Badge */}
               <motion.div
@@ -177,7 +177,7 @@ export const HeroSlider: React.FC = () => {
             </div>
 
             {/* Right Column: Floating Luxury Card */}
-            <div className="lg:col-span-5 relative order-1 lg:order-2">
+            <div className="lg:col-span-5 relative order-2">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9, rotateY: -10 }}
                 animate={{ opacity: 1, scale: 1, rotateY: 0 }}

@@ -4,7 +4,7 @@ import React from 'react';
 
 export const FloatingWhatsApp: React.FC = () => {
   return (
-    <div className="fixed bottom-20 lg:bottom-8 right-4 sm:right-6 z-40 flex items-center group">
+    <div className="fixed bottom-[4.75rem] lg:bottom-8 right-4 sm:right-6 z-40 flex items-center group">
 
       {/* Hover Tooltip Pill */}
       <a
