@@ -17,10 +17,10 @@ import { products } from '@/data/products';
 import { Award, Sparkles, TrendingUp, Gift, Zap, ShieldCheck, Truck, RefreshCw } from 'lucide-react';
 
 export default function HomePage() {
-  const bestSellers = products.filter((p) => p.isBestSeller).slice(0, 4);
-  const newArrivals = products.filter((p) => p.isNewArrival || p.badge === 'HOT').slice(0, 4);
-  const featuredCrafts = products.filter((p) => p.isFeatured).slice(0, 4);
-  const giftItems = products.filter((p) => p.isGiftItem || p.categorySlug === 'resin-products').slice(0, 4);
+  const bestSellers = products.filter((p) => p.isBestSeller).slice(0, 6);
+  const newArrivals = products.filter((p) => p.isNewArrival || p.badge === 'HOT').slice(0, 6);
+  const featuredCrafts = products.filter((p) => p.isFeatured).slice(0, 6);
+  const giftItems = products.filter((p) => p.isGiftItem || p.categorySlug === 'resin-products').slice(0, 6);
 
   return (
     <div className="bg-rose-50 pb-16 lg:pb-0">
@@ -62,10 +62,10 @@ export default function HomePage() {
       {/* Flash Deals Section */}
       <FlashDeals />
 
-      {/* Best Sellers */}
+      {/* Best Sellers (Horizontal Swipe on Mobile / Grid on Desktop) */}
       <section id="bestsellers" className="py-14 sm:py-20 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-8 sm:mb-10">
+          <div className="flex items-center justify-between mb-6 sm:mb-10">
             <div className="flex items-center space-x-2.5 sm:space-x-3">
               <div className="p-2.5 sm:p-3 rounded-2xl bg-amber-50 text-amber-600 border border-amber-100">
                 <Award className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -75,25 +75,29 @@ export default function HomePage() {
                 <h2 className="text-xl sm:text-2xl font-black text-slate-800 tracking-tight">Best Selling Craft Supplies</h2>
               </div>
             </div>
-            <Link href="/shop" className="text-xs font-black text-royal-600 hover:text-royal-700 transition-colors bg-royal-50 px-3 sm:px-4 py-2 rounded-xl border border-royal-100 shrink-0">
-              View All →
-            </Link>
+            <div className="flex items-center space-x-2">
+              <span className="text-[10px] font-bold text-slate-400 sm:hidden">Swipe 👉</span>
+              <Link href="/shop" className="text-xs font-black text-royal-600 hover:text-royal-700 transition-colors bg-royal-50 px-3 sm:px-4 py-2 rounded-xl border border-royal-100 shrink-0">
+                View All →
+              </Link>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+          {/* Swipeable Container on Mobile */}
+          <div className="flex md:grid md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
             {bestSellers.map((product, idx) => (
-              <motion.div key={product.id} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.08 }}>
+              <div key={product.id} className="min-w-[70vw] sm:min-w-[45vw] md:min-w-0 snap-start shrink-0">
                 <ProductCard product={product} />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* New Arrivals */}
+      {/* New Arrivals (Horizontal Swipe on Mobile / Grid on Desktop) */}
       <section className="py-14 sm:py-20 bg-purple-50/60 border-b border-purple-100/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-8 sm:mb-10">
+          <div className="flex items-center justify-between mb-6 sm:mb-10">
             <div className="flex items-center space-x-2.5 sm:space-x-3">
               <div className="p-2.5 sm:p-3 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-100">
                 <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -103,25 +107,28 @@ export default function HomePage() {
                 <h2 className="text-xl sm:text-2xl font-black text-slate-800 tracking-tight">New Arrivals & Fresh Stock</h2>
               </div>
             </div>
-            <Link href="/shop" className="text-xs font-black text-royal-600 hover:text-royal-700 bg-white px-3 sm:px-4 py-2 rounded-xl border border-slate-200 shrink-0">
-              View All →
-            </Link>
+            <div className="flex items-center space-x-2">
+              <span className="text-[10px] font-bold text-slate-400 sm:hidden">Swipe 👉</span>
+              <Link href="/shop" className="text-xs font-black text-royal-600 hover:text-royal-700 bg-white px-3 sm:px-4 py-2 rounded-xl border border-slate-200 shrink-0">
+                View All →
+              </Link>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+          <div className="flex md:grid md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
             {newArrivals.map((product, idx) => (
-              <motion.div key={product.id} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.08 }}>
+              <div key={product.id} className="min-w-[70vw] sm:min-w-[45vw] md:min-w-0 snap-start shrink-0">
                 <ProductCard product={product} />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Crafts */}
+      {/* Featured Crafts (Horizontal Swipe on Mobile / Grid on Desktop) */}
       <section className="py-14 sm:py-20 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-8 sm:mb-10">
+          <div className="flex items-center justify-between mb-6 sm:mb-10">
             <div className="flex items-center space-x-2.5 sm:space-x-3">
               <div className="p-2.5 sm:p-3 rounded-2xl bg-royal-50 text-royal-600 border border-royal-100">
                 <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -131,16 +138,19 @@ export default function HomePage() {
                 <h2 className="text-xl sm:text-2xl font-black text-slate-800 tracking-tight">Featured Craft Highlights</h2>
               </div>
             </div>
-            <Link href="/shop" className="text-xs font-black text-royal-600 hover:text-royal-700 bg-royal-50 px-3 sm:px-4 py-2 rounded-xl border border-royal-100 shrink-0">
-              View All →
-            </Link>
+            <div className="flex items-center space-x-2">
+              <span className="text-[10px] font-bold text-slate-400 sm:hidden">Swipe 👉</span>
+              <Link href="/shop" className="text-xs font-black text-royal-600 hover:text-royal-700 bg-royal-50 px-3 sm:px-4 py-2 rounded-xl border border-royal-100 shrink-0">
+                View All →
+              </Link>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+          <div className="flex md:grid md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
             {featuredCrafts.map((product, idx) => (
-              <motion.div key={product.id} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.08 }}>
+              <div key={product.id} className="min-w-[70vw] sm:min-w-[45vw] md:min-w-0 snap-start shrink-0">
                 <ProductCard product={product} />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -149,10 +159,10 @@ export default function HomePage() {
       {/* Promo Banner & Bundle Offers */}
       <PromoBanner />
 
-      {/* Gift Items */}
+      {/* Gift Items (Horizontal Swipe on Mobile / Grid on Desktop) */}
       <section className="py-14 sm:py-20 bg-rose-50/70 border-b border-rose-100/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-8 sm:mb-10">
+          <div className="flex items-center justify-between mb-6 sm:mb-10">
             <div className="flex items-center space-x-2.5 sm:space-x-3">
               <div className="p-2.5 sm:p-3 rounded-2xl bg-pink-50 text-pink-600 border border-pink-100">
                 <Gift className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -162,16 +172,19 @@ export default function HomePage() {
                 <h2 className="text-xl sm:text-2xl font-black text-slate-800 tracking-tight">Popular Gift Items</h2>
               </div>
             </div>
-            <Link href="/category/gift-items" className="text-xs font-black text-royal-600 hover:text-royal-700 bg-white px-3 sm:px-4 py-2 rounded-xl border border-slate-200 shrink-0">
-              Explore Gift Shop →
-            </Link>
+            <div className="flex items-center space-x-2">
+              <span className="text-[10px] font-bold text-slate-400 sm:hidden">Swipe 👉</span>
+              <Link href="/category/gift-items" className="text-xs font-black text-royal-600 hover:text-royal-700 bg-white px-3 sm:px-4 py-2 rounded-xl border border-slate-200 shrink-0">
+                Explore Gift Shop →
+              </Link>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+          <div className="flex md:grid md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
             {giftItems.map((product, idx) => (
-              <motion.div key={product.id} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.08 }}>
+              <div key={product.id} className="min-w-[70vw] sm:min-w-[45vw] md:min-w-0 snap-start shrink-0">
                 <ProductCard product={product} />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
