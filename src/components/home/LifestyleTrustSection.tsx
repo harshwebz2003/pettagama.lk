@@ -48,7 +48,7 @@ export const LifestyleTrustSection: React.FC = () => {
           {/* Right Image */}
           <div className="lg:col-span-5 relative min-h-[280px] lg:min-h-0">
             <Image
-              src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1000&q=90"
+              src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=90"
               alt="Sri Lankan Craft Workspace"
               fill
               className="object-cover"

@@ -343,7 +343,7 @@ export const products: Product[] = [
     stock: 150,
     sku: 'PET-POT-BLK-DUP',
     images: [
-      'https://images.unsplash.com/photo-1487530811015-780f4d205231?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1560243563-062bfc001d68?auto=format&fit=crop&w=800&q=80',
     ],
     specifications: { 'Dimensions': '6.5cm x 7cm', 'Price': 'Rs. 30' },
     features: ['Lightweight plastic'],

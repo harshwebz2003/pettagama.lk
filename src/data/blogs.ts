@@ -77,7 +77,7 @@ Creating your own handmade jewellery is rewarding and profitable. But using hous
     author: 'Dilhani Jayasinghe',
     date: 'June 30, 2026',
     readTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1535632741777-76623928f6a9?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80',
     tags: ['Jewellery', 'Craft Supplies', 'Beginner'],
   },
 ];
