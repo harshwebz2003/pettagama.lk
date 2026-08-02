@@ -39,7 +39,7 @@ function FloatingPaths() {
   });
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute inset-0 pointer-events-none overflow-hidden z-[1]">
       <svg
         className="w-full h-full text-[#29ABE2]"
         viewBox="0 0 696 316"
@@ -149,16 +149,31 @@ export const HeroSlider: React.FC = () => {
       onMouseMove={handleMouseMove}
       className="hero-logo-bg relative text-slate-800 overflow-hidden pt-10 pb-16 sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-28 border-b border-sky-100/80"
     >
+      {/* Background Video */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-30 mix-blend-multiply scale-105"
+        >
+          <source src="/Create_intro_video_e-commerce_202608030043.mp4" type="video/mp4" />
+        </video>
+        {/* Soft Glass Overlay Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/80 backdrop-blur-[1px]" />
+      </div>
+
       {/* 1. Abstract Flowing SVG Line Artwork */}
       <FloatingPaths />
 
       {/* 2. Layered Blurred Blobs & Light Effects */}
-      <div className="absolute top-1/4 -left-24 w-[420px] h-[420px] bg-[#7FCDFF]/45 rounded-full blur-[140px] pointer-events-none animate-blob" />
-      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-[#29ABE2]/30 rounded-full blur-[150px] pointer-events-none animate-blob" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#DFF7FF]/60 rounded-full blur-[170px] pointer-events-none" />
+      <div className="absolute top-1/4 -left-24 w-[420px] h-[420px] bg-[#7FCDFF]/45 rounded-full blur-[140px] pointer-events-none animate-blob z-[1]" />
+      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-[#29ABE2]/30 rounded-full blur-[150px] pointer-events-none animate-blob z-[1]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#DFF7FF]/60 rounded-full blur-[170px] pointer-events-none z-[1]" />
 
       {/* 3. Subtle Floating Particles & Sparkles */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-[1]">
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
@@ -206,7 +221,7 @@ export const HeroSlider: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1 }}
-                className="inline-flex items-center space-x-2 bg-white/90 border border-sky-200/90 text-[#0277BD] text-xs font-extrabold px-4 py-2 rounded-full shadow-sm backdrop-blur-xl hover:shadow-md transition-all"
+                className="inline-flex items-center space-x-2 bg-white/95 border border-sky-200/90 text-[#0277BD] text-xs font-extrabold px-4 py-2 rounded-full shadow-sm backdrop-blur-xl hover:shadow-md transition-all"
               >
                 <Sparkles className="w-4 h-4 text-[#29ABE2] fill-current animate-pulse" />
                 <span className="tracking-widest uppercase">{slide.badge}</span>
@@ -235,7 +250,7 @@ export const HeroSlider: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal"
+                className="text-slate-700 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium"
               >
                 {slide.description}
               </motion.p>
@@ -269,23 +284,23 @@ export const HeroSlider: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="pt-6 border-t border-sky-200/60 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center lg:text-left"
+                className="pt-6 border-t border-sky-200/70 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center lg:text-left bg-white/40 p-4 rounded-2xl border border-white/60 backdrop-blur-md"
               >
                 <div>
                   <span className="text-2xl sm:text-3xl font-black text-[#0277BD] block">500+</span>
-                  <span className="text-[11px] text-slate-500 uppercase font-bold tracking-wider">Products</span>
+                  <span className="text-[11px] text-slate-600 uppercase font-bold tracking-wider">Products</span>
                 </div>
                 <div>
                   <span className="text-2xl sm:text-3xl font-black text-amber-500 block">4.9 ★</span>
-                  <span className="text-[11px] text-slate-500 uppercase font-bold tracking-wider">Customer Rating</span>
+                  <span className="text-[11px] text-slate-600 uppercase font-bold tracking-wider">Customer Rating</span>
                 </div>
                 <div>
                   <span className="text-2xl sm:text-3xl font-black text-emerald-600 block">24h</span>
-                  <span className="text-[11px] text-slate-500 uppercase font-bold tracking-wider">Islandwide Delivery</span>
+                  <span className="text-[11px] text-slate-600 uppercase font-bold tracking-wider">Islandwide Delivery</span>
                 </div>
                 <div>
                   <span className="text-2xl sm:text-3xl font-black text-[#29ABE2] block">56K+</span>
-                  <span className="text-[11px] text-slate-500 uppercase font-bold tracking-wider">Happy Community</span>
+                  <span className="text-[11px] text-slate-600 uppercase font-bold tracking-wider">Happy Community</span>
                 </div>
               </motion.div>
 
@@ -382,7 +397,7 @@ export const HeroSlider: React.FC = () => {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="bg-white/80 backdrop-blur-xl p-4 rounded-2xl border border-sky-200/70 shadow-sm hover:shadow-md hover:border-sky-300 transition-all flex items-center space-x-3 group"
+              className="bg-white/85 backdrop-blur-xl p-4 rounded-2xl border border-sky-200/70 shadow-sm hover:shadow-md hover:border-sky-300 transition-all flex items-center space-x-3 group"
             >
               <div className="p-2.5 rounded-xl bg-sky-50 text-[#29ABE2] group-hover:bg-[#29ABE2] group-hover:text-white transition-colors">
                 <item.icon className="w-5 h-5" />
