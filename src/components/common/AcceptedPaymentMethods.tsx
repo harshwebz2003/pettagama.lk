@@ -11,7 +11,16 @@ export const AcceptedPaymentMethods: React.FC<AcceptedPaymentMethodsProps> = ({
   variant = 'footer',
 }) => {
   return (
-    <div className={`flex flex-col items-center space-y-4 ${variant === 'checkout' ? 'mt-4 pt-4 border-t border-blue-100' : ''}`}>
+    <div className={`flex flex-col items-center space-y-3 ${variant === 'checkout' ? 'mt-4 pt-4 border-t border-blue-100' : ''}`}>
+
+      {/* Section Label */}
+      <div className="flex items-center space-x-2">
+        <div className="h-px w-8 bg-slate-300" />
+        <span className="text-[11px] font-black text-slate-500 uppercase tracking-[0.2em]">
+          🔒 Payment Methods
+        </span>
+        <div className="h-px w-8 bg-slate-300" />
+      </div>
 
       {/* Payment Logos Row */}
       <div className="flex flex-wrap items-center justify-center gap-5">
