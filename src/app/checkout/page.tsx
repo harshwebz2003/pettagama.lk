@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useShop } from '@/context/ShopContext';
 import { ShieldCheck, Truck, CreditCard, Banknote, Building2, CheckCircle2, ArrowRight, X } from 'lucide-react';
+import { AcceptedPaymentMethods } from '@/components/common/AcceptedPaymentMethods';
 
 export default function CheckoutPage() {
   const { cart, cartSubtotal, clearCart } = useShop();
@@ -361,6 +362,9 @@ export default function CheckoutPage() {
                 <span>Place Demo Order</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
+
+              {/* Accepted Payment Methods & Trust Section */}
+              <AcceptedPaymentMethods variant="checkout" />
 
               <div className="text-[11px] text-slate-400 text-center leading-tight pt-2">
                 By clicking "Place Demo Order", you confirm this is a presentation simulation.

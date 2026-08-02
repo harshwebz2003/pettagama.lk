@@ -3,8 +3,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { PettagamaLogo } from '../common/PettagamaLogo';
-import { MapPin, Phone, Mail, Clock, MessageCircle, ShieldCheck, Truck, RefreshCw, Heart } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle, ShieldCheck, Truck, RefreshCw } from 'lucide-react';
 import { categories } from '@/data/categories';
+import { AcceptedPaymentMethods } from '../common/AcceptedPaymentMethods';
 
 export const Footer: React.FC = () => {
   return (
@@ -104,7 +105,7 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 3: Customer Care & Links */}
+          {/* Col 3: Customer Services */}
           <div>
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-royal-500 pl-2">
               Customer Services
@@ -131,14 +132,14 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/checkout" className="hover:text-white transition-colors">
-                  Checkout Demo
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-white transition-colors">
-                  Craft Guides & Tutorials
-                </Link>
+                <a
+                  href="https://wa.me/c/130129573445815"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-400 hover:text-emerald-300 font-bold transition-colors"
+                >
+                  📱 WhatsApp Catalog
+                </a>
               </li>
             </ul>
           </div>
@@ -165,20 +166,16 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
             </ul>
-
-            <div className="mt-6 pt-4 border-t border-slate-800">
-              <span className="text-[11px] font-semibold text-slate-400 block mb-2">Accepted Payment Methods</span>
-              <div className="flex flex-wrap gap-1.5 text-[10px] text-slate-300 font-bold">
-                <span className="bg-slate-800 px-2 py-1 rounded border border-slate-700">Cash on Delivery</span>
-                <span className="bg-slate-800 px-2 py-1 rounded border border-slate-700">Visa / Mastercard</span>
-                <span className="bg-slate-800 px-2 py-1 rounded border border-slate-700">Bank Transfer</span>
-              </div>
-            </div>
           </div>
         </div>
 
+        {/* Accepted Payment Methods Section */}
+        <div className="py-8 border-b border-slate-800 bg-slate-900/60 rounded-2xl my-6 p-4">
+          <AcceptedPaymentMethods variant="footer" />
+        </div>
+
         {/* Footer Bottom Rights & Required Agency Credit Label */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="pt-4 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
             © {new Date().getFullYear()} Pettagama.lk. All rights reserved. 241 Galle Road, Kalutara, Sri Lanka.
           </div>

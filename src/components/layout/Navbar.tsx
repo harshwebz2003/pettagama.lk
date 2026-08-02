@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Menu, ChevronDown, Sparkles, Gift, Flame, PackageCheck, Layers } from 'lucide-react';
+import { Menu, ChevronDown, Sparkles, Gift, Layers, PackageCheck, ExternalLink } from 'lucide-react';
 import { categories } from '@/data/categories';
 
 export const Navbar: React.FC = () => {
@@ -50,7 +50,7 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Nav Links */}
-          <div className="flex items-center space-x-6 text-xs font-semibold">
+          <div className="flex items-center space-x-5 text-xs font-semibold">
             <Link href="/" className="hover:text-amber-300 transition-colors py-3">
               Home
             </Link>
@@ -75,17 +75,23 @@ export const Navbar: React.FC = () => {
             <Link href="/blog" className="hover:text-amber-300 transition-colors py-3">
               Craft Tutorials
             </Link>
-
             <Link href="/about" className="hover:text-amber-300 transition-colors py-3">
               About Us
             </Link>
-            <Link href="/contact" className="hover:text-amber-300 transition-colors py-3">
-              Contact
-            </Link>
           </div>
 
-          {/* Right Action: Track Order */}
-          <div className="flex items-center">
+          {/* Right Action: WhatsApp Catalog & Track Order */}
+          <div className="flex items-center space-x-3">
+            <a
+              href="https://wa.me/c/130129573445815"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-1 text-xs font-extrabold text-emerald-300 hover:text-white transition-colors bg-emerald-950/70 px-3 py-1.5 rounded-full border border-emerald-700/60"
+            >
+              <span>📱 WhatsApp Catalog</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+
             <Link
               href="/track-order"
               className="flex items-center space-x-1.5 text-xs font-bold text-amber-300 hover:text-white transition-colors bg-royal-900/60 px-3 py-1.5 rounded-full border border-royal-700"
