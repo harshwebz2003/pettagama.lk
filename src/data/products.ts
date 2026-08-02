@@ -24,21 +24,9 @@ export const products: Product[] = [
     options: [
       { name: 'Color Theme', values: ['Ocean Blue & Gold', 'Emerald Green & Gold', 'Blush Pink & Rose Gold'] },
     ],
-    specifications: {
-      'Material': 'UV Stable Epoxy Resin, Gold Leaf',
-      'Quantity': 'Set of 4 Coasters',
-      'Diameter': '10cm approx',
-      'Heat Resistance': 'Up to 70°C',
-    },
-    features: [
-      '100% Hand-poured in Sri Lanka',
-      'Non-yellowing crystal clear finish',
-      'Protective cork backing',
-      'Ideal for housewarming & luxury gifts',
-    ],
-    isFeatured: true,
-    isBestSeller: true,
-    isGiftItem: true,
+    specifications: { 'Material': 'UV Stable Epoxy Resin, Gold Leaf', 'Quantity': 'Set of 4 Coasters', 'Diameter': '10cm approx', 'Heat Resistance': 'Up to 70°C' },
+    features: ['100% Hand-poured in Sri Lanka', 'Non-yellowing crystal clear finish', 'Protective cork backing', 'Ideal for housewarming & luxury gifts'],
+    isFeatured: true, isBestSeller: true, isGiftItem: true,
   },
   {
     id: 'prod-02',
@@ -56,24 +44,15 @@ export const products: Product[] = [
     sku: 'PET-RES-002',
     badge: 'HOT',
     images: [
-      'https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=800&q=80',
     ],
     options: [
       { name: 'Letter', values: ['A', 'B', 'C', 'D', 'E', 'H', 'K', 'M', 'N', 'R', 'S', 'T'] },
       { name: 'Flower Style', values: ['Pink Hydrangea', 'Purple Statice', 'Yellow Daisy'] },
     ],
-    specifications: {
-      'Height': '4cm',
-      'Hardware': 'Gold Alloy Swivel Clasp',
-      'Inclusions': 'Natural Dried Petals + Gold Foil',
-    },
-    features: [
-      'Lightweight and sturdy',
-      'Anti-fade UV protection',
-      'Custom initial available',
-    ],
-    isFeatured: true,
-    isFlashDeal: true,
+    specifications: { 'Height': '4cm', 'Hardware': 'Gold Alloy Swivel Clasp', 'Inclusions': 'Natural Dried Petals + Gold Foil' },
+    features: ['Lightweight and sturdy', 'Anti-fade UV protection', 'Custom initial available'],
+    isFeatured: true, isFlashDeal: true,
   },
 
   // 2. Resin Moulds
@@ -93,20 +72,11 @@ export const products: Product[] = [
     sku: 'PET-MLD-001',
     badge: 'BEST SELLER',
     images: [
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Mould Size': '36cm x 19.5cm',
-      'Material': '100% Premium Flexible Silicone',
-      'Temperature Range': '-40°C to 230°C',
-    },
-    features: [
-      'Glossy mirror inner surface',
-      'Easy demoulding without release spray',
-      'Tear resistant and flexible',
-    ],
-    isFeatured: true,
-    isBestSeller: true,
+    specifications: { 'Mould Size': '36cm x 19.5cm', 'Material': '100% Premium Flexible Silicone', 'Temperature Range': '-40°C to 230°C' },
+    features: ['Glossy mirror inner surface', 'Easy demoulding without release spray', 'Tear resistant and flexible'],
+    isFeatured: true, isBestSeller: true,
   },
   {
     id: 'prod-04',
@@ -123,12 +93,9 @@ export const products: Product[] = [
     stock: 18,
     sku: 'PET-MLD-002',
     images: [
-      'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Includes': '4 Unique Agate Shapes',
-      'Depth': '1.2cm',
-    },
+    specifications: { 'Includes': '4 Unique Agate Shapes', 'Depth': '1.2cm' },
     features: ['Thick durable silicone', 'Smooth glossy finish', 'Reusable'],
     isNewArrival: true,
   },
@@ -141,7 +108,7 @@ export const products: Product[] = [
     category: 'Clay',
     categorySlug: 'clay',
     description: 'Ultra-soft, non-toxic air-hardening modeling clay set with 24 vibrant colours and 3 clay knives.',
-    longDescription: 'Unleash your sculpting creativity without an oven! This 24-pack light air-dry clay dries naturally in 24-36 hours into a lightweight, durable finish. Perfect for figurines, mini charms, and school craft projects.',
+    longDescription: 'Unleash your sculpting creativity without an oven! This 24-pack light air-dry clay dries naturally in 24-36 hours into a lightweight, durable finish.',
     price: 1250,
     oldPrice: 1550,
     rating: 4.8,
@@ -152,19 +119,9 @@ export const products: Product[] = [
     images: [
       'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Pack Weight': '360g Total (15g per tub)',
-      'Drying Time': '24 Hours (No oven required)',
-      'Safety': 'EN71 Non-Toxic Certified',
-    },
-    features: [
-      'No baking required - dries in air',
-      'Ultra soft and non-sticky',
-      'Easy to blend custom shades',
-    ],
-    isFeatured: true,
-    isFlashDeal: true,
-    isBestSeller: true,
+    specifications: { 'Pack Weight': '360g Total (15g per tub)', 'Drying Time': '24 Hours (No oven required)', 'Safety': 'EN71 Non-Toxic Certified' },
+    features: ['No baking required - dries in air', 'Ultra soft and non-sticky', 'Easy to blend custom shades'],
+    isFeatured: true, isFlashDeal: true, isBestSeller: true,
   },
   {
     id: 'prod-06',
@@ -173,7 +130,7 @@ export const products: Product[] = [
     category: 'Clay',
     categorySlug: 'clay',
     description: 'Double-ended wooden and stainless steel sculpting tools for fine detailing, carving, and smoothing.',
-    longDescription: 'Comprehensive 14-piece sculpting kit featuring wooden handles, ribbon tools, needle detailers, and silicone color shapers. Essential for polymer clay artists and ceramic hobbyists.',
+    longDescription: 'Comprehensive 14-piece sculpting kit featuring wooden handles, ribbon tools, needle detailers, and silicone color shapers.',
     price: 1450,
     oldPrice: 1800,
     rating: 4.9,
@@ -181,12 +138,9 @@ export const products: Product[] = [
     stock: 20,
     sku: 'PET-CLY-002',
     images: [
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Quantity': '14 Tools + Zipper Storage Pouch',
-      'Materials': 'Stainless Steel & Natural Beechwood',
-    },
+    specifications: { 'Quantity': '14 Tools + Zipper Storage Pouch', 'Materials': 'Stainless Steel & Natural Beechwood' },
     features: ['Ergonomic grip handles', 'Rust-free steel tips', 'Includes storage case'],
     isNewArrival: true,
   },
@@ -199,7 +153,7 @@ export const products: Product[] = [
     category: 'Pipe Cleaners',
     categorySlug: 'pipe-cleaners',
     description: 'Soft flexible plush chenille wire stems for DIY floral bouquets, animals, and bendable craft shapes.',
-    longDescription: 'Create trending pipe cleaner flowers, tulips, and adorable figures with our 100-piece high-density chenille stems. Features sturdy bendable wire encased in soft plush fibers.',
+    longDescription: 'Create trending pipe cleaner flowers, tulips, and adorable figures with our 100-piece high-density chenille stems.',
     price: 450,
     oldPrice: 600,
     rating: 4.9,
@@ -213,18 +167,9 @@ export const products: Product[] = [
     options: [
       { name: 'Color Mix', values: ['Pastel Spring Mix', 'Vibrant Rainbow Mix', 'Tulip Garden Pink & Green', 'Sunflower Yellow & Green'] },
     ],
-    specifications: {
-      'Length': '30cm per stem',
-      'Diameter': '6mm plush width',
-      'Quantity': '100 Stems per bundle',
-    },
-    features: [
-      'High plush density - no wire show-through',
-      'Easy to twist, bend, and cut',
-      'Great for DIY viral bouquets',
-    ],
-    isFeatured: true,
-    isBestSeller: true,
+    specifications: { 'Length': '30cm per stem', 'Diameter': '6mm plush width', 'Quantity': '100 Stems per bundle' },
+    features: ['High plush density - no wire show-through', 'Easy to twist, bend, and cut', 'Great for DIY viral bouquets'],
+    isFeatured: true, isBestSeller: true,
   },
   {
     id: 'prod-08',
@@ -233,7 +178,7 @@ export const products: Product[] = [
     category: 'Pipe Cleaners',
     categorySlug: 'pipe-cleaners',
     description: 'Complete kit to make 10 everlasting pipe cleaner tulips with floral tape, stem wires, and ribbon wrapping.',
-    longDescription: 'Everything you need to craft a gorgeous handmade flower bouquet that lasts forever! Includes pastel chenille stems, floral wire stems, green wrapping tape, gift paper, and step-by-step guide.',
+    longDescription: 'Everything you need to craft a gorgeous handmade flower bouquet that lasts forever!',
     price: 1350,
     oldPrice: 1700,
     rating: 5.0,
@@ -242,15 +187,11 @@ export const products: Product[] = [
     sku: 'PET-PIP-002',
     badge: 'NEW',
     images: [
-      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1487530811015-780f4d205231?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Makes': '10 Handcrafted Tulips',
-      'Includes': '100 Pipe Cleaners, 10 Floral Wires, Tape, Gift Wrapper, Ribbon',
-    },
+    specifications: { 'Makes': '10 Handcrafted Tulips', 'Includes': '100 Pipe Cleaners, 10 Floral Wires, Tape, Gift Wrapper, Ribbon' },
     features: ['Beginner friendly', 'Everlasting floral gift', 'Includes wrapping materials'],
-    isCraftKit: true,
-    isNewArrival: true,
+    isCraftKit: true, isNewArrival: true,
   },
 
   // 5. Embroidery Threads
@@ -272,18 +213,9 @@ export const products: Product[] = [
     images: [
       'https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Skein Length': '8 meters per skein',
-      'Strands': '6 divisible strands',
-      'Material': '100% Mercerized Long-Staple Cotton',
-    },
-    features: [
-      'No fading or bleeding in wash',
-      '50 distinct non-repeating shades',
-      'Silky smooth texture',
-    ],
-    isFeatured: true,
-    isBestSeller: true,
+    specifications: { 'Skein Length': '8 meters per skein', 'Strands': '6 divisible strands', 'Material': '100% Mercerized Long-Staple Cotton' },
+    features: ['No fading or bleeding in wash', '50 distinct non-repeating shades', 'Silky smooth texture'],
+    isFeatured: true, isBestSeller: true,
   },
   {
     id: 'prod-10',
@@ -300,12 +232,9 @@ export const products: Product[] = [
     stock: 28,
     sku: 'PET-THR-002',
     images: [
-      'https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Quantity': '12 Metallic Skeins (6 Gold, 6 Silver)',
-      'Length': '8m each',
-    },
+    specifications: { 'Quantity': '12 Metallic Skeins (6 Gold, 6 Silver)', 'Length': '8m each' },
     features: ['High sparkle shine', 'Durable non-fraying twist'],
   },
 
@@ -317,7 +246,7 @@ export const products: Product[] = [
     category: 'Embroidery Tools',
     categorySlug: 'embroidery-tools',
     description: 'Smooth sanded natural bamboo embroidery frames with stainless steel adjustment screw.',
-    longDescription: 'Set of 5 circular embroidery hoops in varying diameters (13cm, 17cm, 20cm, 23cm, 26cm). Provides drum-tight tension on Aida fabric or linen for comfortable stitching.',
+    longDescription: 'Set of 5 circular embroidery hoops in varying diameters (13cm, 17cm, 20cm, 23cm, 26cm).',
     price: 1450,
     oldPrice: 1750,
     rating: 4.8,
@@ -325,12 +254,9 @@ export const products: Product[] = [
     stock: 25,
     sku: 'PET-TOO-001',
     images: [
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1619634716804-fb2a15bd6023?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Sizes Included': '13cm, 17cm, 20cm, 23cm, 26cm',
-      'Material': 'Natural Polished Bamboo + Brass Screw',
-    },
+    specifications: { 'Sizes Included': '13cm, 17cm, 20cm, 23cm, 26cm', 'Material': 'Natural Polished Bamboo + Brass Screw' },
     features: ['Burr-free smooth edges', 'Strong anti-slip grip', 'Can be used as display frames'],
     isFeatured: true,
   },
@@ -350,12 +276,9 @@ export const products: Product[] = [
     sku: 'PET-TOO-002',
     badge: 'HOT',
     images: [
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1600147131759-880e94a6185f?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Needle Gauges': '1.3mm, 1.6mm, 2.2mm interchangeable tips',
-      'Includes': 'Punch Pen, 3 Tips, 2 Long Wire Threaders',
-    },
+    specifications: { 'Needle Gauges': '1.3mm, 1.6mm, 2.2mm interchangeable tips', 'Includes': 'Punch Pen, 3 Tips, 2 Long Wire Threaders' },
     features: ['4 Adjustable loop depths', 'Comfortable rubberized grip'],
     isFlashDeal: true,
   },
@@ -368,7 +291,7 @@ export const products: Product[] = [
     category: 'Beads',
     categorySlug: 'beads',
     description: 'Over 4,000 pcs 3mm glass seed beads in 24 pastel and vivid translucent colors with jewelry accessories.',
-    longDescription: 'The ultimate bead craft box for making waist chains, bracelets, necklaces, and phone straps. Comes neatly organized in a 24-compartment storage box with scissors, jump rings, and 2 rolls of stretch cord.',
+    longDescription: 'The ultimate bead craft box for making waist chains, bracelets, necklaces, and phone straps.',
     price: 1850,
     oldPrice: 2250,
     rating: 5.0,
@@ -379,18 +302,9 @@ export const products: Product[] = [
     images: [
       'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Bead Size': '3mm (8/0 seed beads)',
-      'Total Beads': '~4,800 Pieces',
-      'Included Extras': '0.8mm Elastic Thread (10m), Scissors, Clasps',
-    },
-    features: [
-      'Uniform glass beads with glossy finish',
-      'Sturdy organized storage case',
-      'Complete starter kit',
-    ],
-    isFeatured: true,
-    isBestSeller: true,
+    specifications: { 'Bead Size': '3mm (8/0 seed beads)', 'Total Beads': '~4,800 Pieces', 'Included Extras': '0.8mm Elastic Thread (10m), Scissors, Clasps' },
+    features: ['Uniform glass beads with glossy finish', 'Sturdy organized storage case', 'Complete starter kit'],
+    isFeatured: true, isBestSeller: true,
   },
   {
     id: 'prod-14',
@@ -399,7 +313,7 @@ export const products: Product[] = [
     category: 'Beads',
     categorySlug: 'beads',
     description: 'Flat round 7mm acrylic letter beads with clear gold engraved A-Z alphabet letters for custom name bracelets.',
-    longDescription: 'High quality acrylic letter beads for personalized jewelry, keychains, and name straps. Crisp unfading gold letters on smooth white beads.',
+    longDescription: 'High quality acrylic letter beads for personalized jewelry, keychains, and name straps.',
     price: 1200,
     oldPrice: 1500,
     rating: 4.8,
@@ -407,12 +321,9 @@ export const products: Product[] = [
     stock: 30,
     sku: 'PET-BED-002',
     images: [
-      'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1573408301185-9519f94f99ba?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Size': '7mm diameter, 4mm thick (1.5mm hole)',
-      'Quantity': '1,200 Beads (A-Z balanced distribution)',
-    },
+    specifications: { 'Size': '7mm diameter, 4mm thick (1.5mm hole)', 'Quantity': '1,200 Beads (A-Z balanced distribution)' },
     features: ['Engraved non-rubbing letters', 'Smooth center hole'],
   },
 
@@ -424,7 +335,7 @@ export const products: Product[] = [
     category: 'Jewellery Supplies',
     categorySlug: 'jewellery-supplies',
     description: 'Essential hardware kit containing 800+ jump rings, lobster clasps, earring hooks, and 3 pliers.',
-    longDescription: 'Complete jewelry repair and crafting kit. Includes round nose pliers, chain nose pliers, wire cutters, jump ring opener ring, head pins, crimp beads, and clasps in dual gold and silver finishes.',
+    longDescription: 'Complete jewelry repair and crafting kit. Includes round nose pliers, chain nose pliers, wire cutters, jump ring opener ring, head pins, crimp beads, and clasps.',
     price: 2400,
     oldPrice: 2900,
     rating: 4.9,
@@ -433,12 +344,9 @@ export const products: Product[] = [
     sku: 'PET-JWL-SUP-01',
     badge: 'HOT',
     images: [
-      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Pliers Included': 'Chain Nose, Round Nose, Wire Cutter',
-      'Findings': 'Jump Rings (4mm/6mm), Lobster Clasps, Earring Hooks, Ribbon Ends',
-    },
+    specifications: { 'Pliers Included': 'Chain Nose, Round Nose, Wire Cutter', 'Findings': 'Jump Rings (4mm/6mm), Lobster Clasps, Earring Hooks, Ribbon Ends' },
     features: ['Non-tarnish metal alloy', 'Ergonomic rubber grip tools'],
     isFeatured: true,
   },
@@ -457,12 +365,9 @@ export const products: Product[] = [
     stock: 50,
     sku: 'PET-JWL-SUP-02',
     images: [
-      'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1573408301185-9519f94f99ba?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Thickness': '0.8mm',
-      'Quantity': '3 Spools (30 meters total)',
-    },
+    specifications: { 'Thickness': '0.8mm', 'Quantity': '3 Spools (30 meters total)' },
     features: ['High elasticity recovery', 'Invisible clear finish'],
   },
 
@@ -483,22 +388,11 @@ export const products: Product[] = [
     sku: 'PET-KIT-001',
     badge: 'EXCLUSIVE',
     images: [
-      'https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1560243563-062bfc001d68?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Resin Volume': '200ml Resin A + 100ml Hardener B',
-      'Curing Time': '24 Hours',
-      'Included Accessories': '30+ Crafting components',
-    },
-    features: [
-      'BPA-free & low odor formula',
-      'Full step-by-step printed Sri Lankan guide',
-      'Perfect gift for adults and teens',
-    ],
-    isFeatured: true,
-    isCraftKit: true,
-    isGiftItem: true,
-    isBestSeller: true,
+    specifications: { 'Resin Volume': '200ml Resin A + 100ml Hardener B', 'Curing Time': '24 Hours', 'Included Accessories': '30+ Crafting components' },
+    features: ['BPA-free & low odor formula', 'Full step-by-step printed Sri Lankan guide', 'Perfect gift for adults and teens'],
+    isFeatured: true, isCraftKit: true, isGiftItem: true, isBestSeller: true,
   },
   {
     id: 'prod-18',
@@ -516,15 +410,11 @@ export const products: Product[] = [
     sku: 'PET-KIT-002',
     badge: 'NEW',
     images: [
-      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Finished Size': '20cm Diameter',
-      'Includes': 'Stamped Cloth, Wooden Punch Needle, 20cm Hoop, Yarn Pack',
-    },
+    specifications: { 'Finished Size': '20cm Diameter', 'Includes': 'Stamped Cloth, Wooden Punch Needle, 20cm Hoop, Yarn Pack' },
     features: ['Beginner friendly pre-printed design', 'Relaxing DIY home decor'],
-    isCraftKit: true,
-    isNewArrival: true,
+    isCraftKit: true, isNewArrival: true,
   },
 
   // 10. Sewing Accessories
@@ -543,12 +433,9 @@ export const products: Product[] = [
     stock: 35,
     sku: 'PET-SEW-001',
     images: [
-      'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Length': '9.5cm (3.7 inches)',
-      'Material': 'Titanium Plated Stainless Steel',
-    },
+    specifications: { 'Length': '9.5cm (3.7 inches)', 'Material': 'Titanium Plated Stainless Steel' },
     features: ['Micro-point fine tip', 'Antique Victorian design', 'Rust proof finish'],
   },
   {
@@ -568,10 +455,7 @@ export const products: Product[] = [
     images: [
       'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Tape Length': '150cm / 60 inches',
-      'Pin Count': '100 Pins in Wheel Case',
-    },
+    specifications: { 'Tape Length': '150cm / 60 inches', 'Pin Count': '100 Pins in Wheel Case' },
     features: ['Push button tape retraction', 'Durable non-stretch fiberglass tape'],
   },
 
@@ -583,7 +467,7 @@ export const products: Product[] = [
     category: 'Cosmetics',
     categorySlug: 'cosmetics',
     description: 'Nourishing non-sticky high-shine lip oil enriched with pure Sri Lankan virgin coconut oil and vitamin E.',
-    longDescription: 'Infused with natural organic botanical extracts from Sri Lanka. Provides instant glossy shine while deeply soothing dry, chapped lips.',
+    longDescription: 'Infused with natural organic botanical extracts from Sri Lanka.',
     price: 1150,
     oldPrice: 1450,
     rating: 4.8,
@@ -592,15 +476,10 @@ export const products: Product[] = [
     sku: 'PET-COS-001',
     badge: 'NEW',
     images: [
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80',
     ],
-    options: [
-      { name: 'Flavour', values: ['Wild Rose & Honey', 'Sweet Strawberry Gloss', 'Coconut Vanilla'] },
-    ],
-    specifications: {
-      'Volume': '8ml',
-      'Key Ingredients': 'Virgin Coconut Oil, Shea Butter, Vitamin E, Rosehip Oil',
-    },
+    options: [{ name: 'Flavour', values: ['Wild Rose & Honey', 'Sweet Strawberry Gloss', 'Coconut Vanilla'] }],
+    specifications: { 'Volume': '8ml', 'Key Ingredients': 'Virgin Coconut Oil, Shea Butter, Vitamin E, Rosehip Oil' },
     features: ['100% Cruelty Free', 'Paraben free formula', 'Glass tube applicator'],
     isNewArrival: true,
   },
@@ -611,7 +490,7 @@ export const products: Product[] = [
     category: 'Cosmetics',
     categorySlug: 'cosmetics',
     description: 'Natural invigorating body polish made with roasted Arabica coffee grounds, Ceylon cinnamon, and coconut sugar.',
-    longDescription: 'Buff away dead skin cells and reveal glowing skin. Ceylon cinnamon stimulates circulation while organic coconut oil hydrates deeply.',
+    longDescription: 'Buff away dead skin cells and reveal glowing skin.',
     price: 1650,
     oldPrice: 1950,
     rating: 4.9,
@@ -619,12 +498,9 @@ export const products: Product[] = [
     stock: 19,
     sku: 'PET-COS-002',
     images: [
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1570194065650-d99fb4b8ccb0?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Weight': '200g Glass Jar',
-      'Skin Type': 'All Skin Types',
-    },
+    specifications: { 'Weight': '200g Glass Jar', 'Skin Type': 'All Skin Types' },
     features: ['100% Natural Sri Lankan Ingredients', 'Visibly smoother texture'],
   },
 
@@ -645,17 +521,11 @@ export const products: Product[] = [
     sku: 'PET-JWL-001',
     badge: 'BEST SELLER',
     images: [
-      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Chain Length': '40cm + 5cm extension',
-      'Material': '18K Gold Plated Stainless Steel + Natural Pearl',
-      'Waterproof': '100% Sweat & Water Resistant',
-    },
+    specifications: { 'Chain Length': '40cm + 5cm extension', 'Material': '18K Gold Plated Stainless Steel + Natural Pearl', 'Waterproof': '100% Sweat & Water Resistant' },
     features: ['Hypoallergenic (Nickel & Lead free)', 'Tarnish-free 2-year sheen', 'Gift pouch included'],
-    isFeatured: true,
-    isBestSeller: true,
-    isGiftItem: true,
+    isFeatured: true, isBestSeller: true, isGiftItem: true,
   },
   {
     id: 'prod-24',
@@ -672,12 +542,9 @@ export const products: Product[] = [
     stock: 24,
     sku: 'PET-JWL-002',
     images: [
-      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1629224316810-9d8805b95e76?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Earring Drop': '3.5cm',
-      'Hook Material': '925 Sterling Silver Plated Wire',
-    },
+    specifications: { 'Earring Drop': '3.5cm', 'Hook Material': '925 Sterling Silver Plated Wire' },
     features: ['Featherlight comfort', 'Real flower petals encased'],
     isGiftItem: true,
   },
@@ -699,15 +566,10 @@ export const products: Product[] = [
     sku: 'PET-BAG-001',
     badge: 'HOT',
     images: [
-      'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80',
     ],
-    options: [
-      { name: 'Color', values: ['Natural Beige & Tan', 'Navy Blue & Cream', 'Forest Green'] },
-    ],
-    specifications: {
-      'Dimensions': '38cm (H) x 34cm (W) x 12cm (D)',
-      'Closure': 'Smooth Top Zipper + Inner Zip Pocket',
-    },
+    options: [{ name: 'Color', values: ['Natural Beige & Tan', 'Navy Blue & Cream', 'Forest Green'] }],
+    specifications: { 'Dimensions': '38cm (H) x 34cm (W) x 12cm (D)', 'Closure': 'Smooth Top Zipper + Inner Zip Pocket' },
     features: ['Holds laptop + yarn & craft supplies', 'Water resistant inner lining'],
     isFeatured: true,
   },
@@ -728,10 +590,7 @@ export const products: Product[] = [
     images: [
       'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Dimensions': '22cm x 15cm',
-      'Material': 'Cotton Velvet + Satin Lining',
-    },
+    specifications: { 'Dimensions': '22cm x 15cm', 'Material': 'Cotton Velvet + Satin Lining' },
     features: ['Intricate floral embroidery', 'Ideal gift pouch'],
     isGiftItem: true,
   },
@@ -755,18 +614,9 @@ export const products: Product[] = [
     images: [
       'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Box Dimensions': '28cm x 22cm x 10cm',
-      'Includes': '6 Handpicked Premium Craft & Lifestyle Items + Card',
-    },
-    features: [
-      'Complimentary custom handwritten gift note',
-      'Ready to give luxury packaging',
-      'Saves 25% compared to individual items',
-    ],
-    isFeatured: true,
-    isGiftItem: true,
-    isBestSeller: true,
+    specifications: { 'Box Dimensions': '28cm x 22cm x 10cm', 'Includes': '6 Handpicked Premium Craft & Lifestyle Items + Card' },
+    features: ['Complimentary custom handwritten gift note', 'Ready to give luxury packaging', 'Saves 25% compared to individual items'],
+    isFeatured: true, isGiftItem: true, isBestSeller: true,
   },
   {
     id: 'prod-28',
@@ -783,17 +633,14 @@ export const products: Product[] = [
     stock: 18,
     sku: 'PET-GFT-002',
     images: [
-      'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Stamp Head': '25mm Brass Rose Design',
-      'Includes': 'Stamp, Wood Handle, 3 Metallic Wax Sticks, Spoon, 2 Candles',
-    },
+    specifications: { 'Stamp Head': '25mm Brass Rose Design', 'Includes': 'Stamp, Wood Handle, 3 Metallic Wax Sticks, Spoon, 2 Candles' },
     features: ['Detachable brass head', 'Crisp vintage detail'],
     isGiftItem: true,
   },
 
-  // 15. More Products for high density catalog
+  // Additional products
   {
     id: 'prod-29',
     slug: 'glitter-pigment-powder-12-colors-resin',
@@ -810,12 +657,9 @@ export const products: Product[] = [
     sku: 'PET-RES-003',
     badge: 'SALE',
     images: [
-      'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Weight': '10g per sealed jar (120g total)',
-      'Colors': 'Gold, Bronze, Sapphire, Emerald, Ruby, Violet, Pearl White, etc.',
-    },
+    specifications: { 'Weight': '10g per sealed jar (120g total)', 'Colors': 'Gold, Bronze, Sapphire, Emerald, Ruby, Violet, Pearl White, etc.' },
     features: ['Non-toxic & non-tarnish', 'High shimmer density'],
     isFlashDeal: true,
   },
@@ -835,15 +679,10 @@ export const products: Product[] = [
     sku: 'PET-KIT-003',
     badge: 'HOT',
     images: [
-      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
     ],
-    specifications: {
-      'Scale': '1:24 Miniature',
-      'Assembly Time': '12-15 Hours',
-      'Includes': 'Laser cut wood, fabric, dust cover, LED light kit',
-    },
+    specifications: { 'Scale': '1:24 Miniature', 'Assembly Time': '12-15 Hours', 'Includes': 'Laser cut wood, fabric, dust cover, LED light kit' },
     features: ['Warm ambient LED lighting included', 'Collector item'],
-    isCraftKit: true,
-    isGiftItem: true,
+    isCraftKit: true, isGiftItem: true,
   },
 ];

@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Sparkles, Tag, ArrowRight, Gift, Percent, Zap } from 'lucide-react';
+import { ArrowRight, Tag, Gift, Percent } from 'lucide-react';
 import { products } from '@/data/products';
 import { ProductCard } from '../common/ProductCard';
 
@@ -12,79 +12,75 @@ export const PromoBanner: React.FC = () => {
   const bundleProducts = products.filter((p) => p.isCraftKit || p.badge === 'EXCLUSIVE').slice(0, 3);
 
   return (
-    <section className="py-20 bg-slate-950 text-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-        
-        {/* High-Converting Promotional Banner */}
+    <section className="py-20 bg-gradient-to-br from-royal-50 via-purple-50 to-blue-50 border-b border-royal-100/50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+        {/* Promo Banner Card */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative rounded-3xl bg-gradient-to-r from-royal-950 via-royal-900 to-slate-950 text-white overflow-hidden shadow-2xl p-8 sm:p-14 border border-royal-700/50"
+          transition={{ duration: 0.5 }}
+          className="relative rounded-3xl bg-gradient-to-r from-royal-600 via-royal-700 to-indigo-700 text-white overflow-hidden shadow-2xl p-8 sm:p-14"
         >
-          <div className="absolute -right-20 -bottom-20 w-[500px] h-[500px] bg-royal-600/20 rounded-full blur-[140px] pointer-events-none" />
-          <div className="absolute top-0 left-1/3 w-64 h-64 bg-amber-500/10 rounded-full blur-[100px] pointer-events-none" />
-          
+          {/* Soft glows */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-indigo-400/20 rounded-full blur-[80px] pointer-events-none" />
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-            <div className="lg:col-span-8 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
-                <Percent className="w-4 h-4 fill-current" />
-                <span>Special VIP Demo Offer</span>
+            <div className="lg:col-span-8 space-y-5 text-center lg:text-left">
+
+              <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md text-white font-black text-xs px-4 py-1.5 rounded-full border border-white/30">
+                <Percent className="w-4 h-4" />
+                <span>Special Demo Promo Code</span>
               </div>
 
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight text-shimmer">
+              <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
                 Get 10% OFF Your First Craft Order!
               </h2>
 
-              <p className="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
-                Use promo code <span className="font-mono bg-white/10 px-3 py-1 rounded-xl text-amber-300 font-bold border border-amber-400/30">PETTAGAMA10</span> at checkout to claim your 10% discount on resin moulds, beads, embroidery floss, and DIY craft kits.
+              <p className="text-sm text-blue-100 max-w-xl leading-relaxed">
+                Use coupon code <span className="font-mono bg-white/20 px-3 py-1 rounded-xl text-white font-bold border border-white/30">PETTAGAMA10</span> at checkout to claim your 10% discount on any craft supplies order.
               </p>
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
                 <Link
                   href="/shop"
-                  className="bg-gradient-to-r from-accent-red to-red-600 hover:from-red-600 hover:to-accent-red text-white font-extrabold px-8 py-4 rounded-2xl shadow-xl flex items-center space-x-2 text-xs uppercase tracking-wider transition-all transform hover:-translate-y-1"
+                  className="bg-white text-royal-700 hover:bg-blue-50 font-extrabold px-8 py-4 rounded-2xl shadow-lg flex items-center space-x-2 text-sm transition-all transform hover:-translate-y-0.5"
                 >
                   <span>Claim Discount Now</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
-                <div className="flex items-center space-x-2 text-xs font-bold text-slate-200 bg-slate-900/80 px-4 py-3.5 rounded-2xl border border-slate-800 backdrop-blur-md">
-                  <Tag className="w-4 h-4 text-amber-400" />
-                  <span>Coupon: PETTAGAMA10</span>
+                <div className="flex items-center space-x-2 text-sm font-bold text-blue-100 bg-white/10 px-4 py-3.5 rounded-2xl border border-white/20">
+                  <Tag className="w-4 h-4 text-amber-300" />
+                  <span>Code: PETTAGAMA10</span>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-4 hidden lg:block relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-2 border-royal-500/30 group">
+            <div className="lg:col-span-4 hidden lg:block relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 group">
               <Image
-                src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=800&q=80"
-                alt="Craft Supplies Bundle"
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
+                alt="Craft Supplies"
                 fill
-                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                className="object-cover group-hover:scale-110 transition-transform duration-700 brightness-90"
               />
             </div>
           </div>
         </motion.div>
 
-        {/* Bundle Offers Section */}
+        {/* Bundle Kits */}
         <div>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div>
-              <div className="inline-flex items-center space-x-1.5 text-pink-400 font-black text-xs uppercase tracking-wider bg-pink-950/60 px-3.5 py-1 rounded-full border border-pink-800/40 mb-2">
-                <Gift className="w-4 h-4 fill-current" />
-                <span>Save Up To 25%</span>
-              </div>
-              <h3 className="text-3xl font-black text-white tracking-tight">
-                All-In-One DIY Craft Bundle Kits
-              </h3>
+              <p className="text-xs font-extrabold text-pink-500 uppercase tracking-widest mb-1">
+                <Gift className="w-4 h-4 inline mr-1" /> Save Up To 25%
+              </p>
+              <h3 className="text-2xl font-black text-slate-800 tracking-tight">All-In-One DIY Craft Bundle Kits</h3>
             </div>
-            <Link
-              href="/category/craft-kits"
-              className="text-xs font-black text-royal-400 hover:text-white transition-colors flex items-center space-x-1"
-            >
-              <span>Explore All Craft Bundles →</span>
+            <Link href="/category/craft-kits" className="text-xs font-black text-royal-600 hover:text-royal-700 bg-white px-4 py-2 rounded-xl border border-slate-200">
+              Explore All Craft Bundles →
             </Link>
           </div>
 

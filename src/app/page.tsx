@@ -23,38 +23,35 @@ export default function HomePage() {
   const giftItems = products.filter((p) => p.isGiftItem).slice(0, 4);
 
   return (
-    <div className="space-y-0 bg-slate-950 text-white">
-      
-      {/* Hero Slider with Motion */}
+    <div className="bg-rose-50">
+
+      {/* Hero Slider */}
       <HeroSlider />
 
       {/* Trust Benefits Bar */}
-      <div className="bg-slate-900 border-y border-slate-800 py-8 relative">
+      <div className="bg-white border-y border-slate-100 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <motion.div whileHover={{ y: -3 }} className="p-4 bg-slate-950/80 rounded-2xl border border-royal-500/20 shadow-lg backdrop-blur-md">
-              <Truck className="w-6 h-6 text-royal-400 mx-auto mb-2" />
-              <span className="text-xs font-black text-white block">Islandwide Delivery</span>
-              <span className="text-[11px] text-slate-400">Fast courier to all 25 districts</span>
-            </motion.div>
-
-            <motion.div whileHover={{ y: -3 }} className="p-4 bg-slate-950/80 rounded-2xl border border-royal-500/20 shadow-lg backdrop-blur-md">
-              <ShieldCheck className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
-              <span className="text-xs font-black text-white block">100% Secure Shopping</span>
-              <span className="text-[11px] text-slate-400">Trusted Sri Lankan store</span>
-            </motion.div>
-
-            <motion.div whileHover={{ y: -3 }} className="p-4 bg-slate-950/80 rounded-2xl border border-royal-500/20 shadow-lg backdrop-blur-md">
-              <RefreshCw className="w-6 h-6 text-amber-400 mx-auto mb-2" />
-              <span className="text-xs font-black text-white block">Cash on Delivery</span>
-              <span className="text-[11px] text-slate-400">Pay when order arrives</span>
-            </motion.div>
-
-            <motion.div whileHover={{ y: -3 }} className="p-4 bg-slate-950/80 rounded-2xl border border-royal-500/20 shadow-lg backdrop-blur-md">
-              <Zap className="w-6 h-6 text-pink-400 mx-auto mb-2" />
-              <span className="text-xs font-black text-white block">WhatsApp Support</span>
-              <span className="text-[11px] text-slate-400">+94 77 514 2572</span>
-            </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { icon: Truck, color: 'text-royal-600 bg-royal-50', label: 'Islandwide Delivery', sub: 'Fast courier to all 25 districts' },
+              { icon: ShieldCheck, color: 'text-emerald-600 bg-emerald-50', label: '100% Secure Shopping', sub: 'Trusted Sri Lankan store' },
+              { icon: RefreshCw, color: 'text-amber-600 bg-amber-50', label: 'Cash on Delivery', sub: 'Pay when order arrives' },
+              { icon: Zap, color: 'text-rose-500 bg-rose-50', label: 'WhatsApp Support', sub: '+94 77 514 2572' },
+            ].map((item) => (
+              <motion.div
+                key={item.label}
+                whileHover={{ y: -3 }}
+                className="flex items-center space-x-3 p-4 rounded-2xl bg-slate-50 border border-slate-100"
+              >
+                <div className={`p-2.5 rounded-xl ${item.color}`}>
+                  <item.icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs font-black text-slate-800 block leading-tight">{item.label}</span>
+                  <span className="text-[11px] text-slate-400">{item.sub}</span>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
@@ -65,33 +62,26 @@ export default function HomePage() {
       {/* Flash Deals Section */}
       <FlashDeals />
 
-      {/* Best Sellers Grid */}
-      <section id="bestsellers" className="py-20 bg-slate-950 text-white border-b border-slate-800">
+      {/* Best Sellers */}
+      <section id="bestsellers" className="py-20 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-10">
             <div className="flex items-center space-x-3">
-              <div className="p-3 rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-500/30">
+              <div className="p-3 rounded-2xl bg-amber-50 text-amber-600 border border-amber-100">
                 <Award className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xs font-extrabold text-amber-400 uppercase tracking-wider block">Customer Favorites</span>
-                <h2 className="text-3xl font-black text-white tracking-tight">Best Selling Craft Supplies</h2>
+                <span className="text-xs font-extrabold text-amber-600 uppercase tracking-wider block">Customer Favorites</span>
+                <h2 className="text-2xl font-black text-slate-800 tracking-tight">Best Selling Craft Supplies</h2>
               </div>
             </div>
-            <Link href="/shop" className="text-xs font-black text-royal-400 hover:text-white transition-colors bg-slate-900 px-4 py-2 rounded-xl border border-slate-800">
+            <Link href="/shop" className="text-xs font-black text-royal-600 hover:text-royal-700 transition-colors bg-royal-50 px-4 py-2 rounded-xl border border-royal-100">
               View All →
             </Link>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {bestSellers.map((product, idx) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
+              <motion.div key={product.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }}>
                 <ProductCard product={product} />
               </motion.div>
             ))}
@@ -99,33 +89,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* New Arrivals Section */}
-      <section className="py-20 bg-slate-900 text-white border-b border-slate-800">
+      {/* New Arrivals */}
+      <section className="py-20 bg-purple-50/60 border-b border-purple-100/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-10">
             <div className="flex items-center space-x-3">
-              <div className="p-3 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              <div className="p-3 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-100">
                 <TrendingUp className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xs font-extrabold text-emerald-400 uppercase tracking-wider block">Just Arrived</span>
-                <h2 className="text-3xl font-black text-white tracking-tight">New Arrivals & Fresh Stock</h2>
+                <span className="text-xs font-extrabold text-emerald-600 uppercase tracking-wider block">Just Arrived</span>
+                <h2 className="text-2xl font-black text-slate-800 tracking-tight">New Arrivals & Fresh Stock</h2>
               </div>
             </div>
-            <Link href="/shop" className="text-xs font-black text-royal-400 hover:text-white transition-colors bg-slate-950 px-4 py-2 rounded-xl border border-slate-800">
+            <Link href="/shop" className="text-xs font-black text-royal-600 hover:text-royal-700 bg-white px-4 py-2 rounded-xl border border-slate-200">
               View All →
             </Link>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {newArrivals.map((product, idx) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
+              <motion.div key={product.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }}>
                 <ProductCard product={product} />
               </motion.div>
             ))}
@@ -133,33 +116,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Craft Products Banner Section */}
-      <section className="py-20 bg-slate-950 text-white border-b border-slate-800">
+      {/* Featured Crafts */}
+      <section className="py-20 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-10">
             <div className="flex items-center space-x-3">
-              <div className="p-3 rounded-2xl bg-royal-500/20 text-royal-400 border border-royal-500/30">
+              <div className="p-3 rounded-2xl bg-royal-50 text-royal-600 border border-royal-100">
                 <Sparkles className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xs font-extrabold text-royal-400 uppercase tracking-wider block">Handpicked Selection</span>
-                <h2 className="text-3xl font-black text-white tracking-tight">Featured Craft Highlights</h2>
+                <span className="text-xs font-extrabold text-royal-600 uppercase tracking-wider block">Handpicked For You</span>
+                <h2 className="text-2xl font-black text-slate-800 tracking-tight">Featured Craft Highlights</h2>
               </div>
             </div>
-            <Link href="/shop" className="text-xs font-black text-royal-400 hover:text-white transition-colors bg-slate-900 px-4 py-2 rounded-xl border border-slate-800">
+            <Link href="/shop" className="text-xs font-black text-royal-600 hover:text-royal-700 bg-royal-50 px-4 py-2 rounded-xl border border-royal-100">
               View All →
             </Link>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredCrafts.map((product, idx) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
+              <motion.div key={product.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }}>
                 <ProductCard product={product} />
               </motion.div>
             ))}
@@ -167,36 +143,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Promotional Banner & Bundle Offers */}
+      {/* Promo Banner & Bundle Offers */}
       <PromoBanner />
 
-      {/* Popular Gift Items */}
-      <section className="py-20 bg-slate-900 text-white border-b border-slate-800">
+      {/* Gift Items */}
+      <section className="py-20 bg-rose-50/70 border-b border-rose-100/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-10">
             <div className="flex items-center space-x-3">
-              <div className="p-3 rounded-2xl bg-pink-500/20 text-pink-400 border border-pink-500/30">
+              <div className="p-3 rounded-2xl bg-pink-50 text-pink-600 border border-pink-100">
                 <Gift className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider block">Special Keepsakes</span>
-                <h2 className="text-3xl font-black text-white tracking-tight">Popular Gift Items</h2>
+                <span className="text-xs font-extrabold text-pink-600 uppercase tracking-wider block">Special Keepsakes</span>
+                <h2 className="text-2xl font-black text-slate-800 tracking-tight">Popular Gift Items</h2>
               </div>
             </div>
-            <Link href="/category/gift-items" className="text-xs font-black text-royal-400 hover:text-white transition-colors bg-slate-950 px-4 py-2 rounded-xl border border-slate-800">
+            <Link href="/category/gift-items" className="text-xs font-black text-royal-600 hover:text-royal-700 bg-white px-4 py-2 rounded-xl border border-slate-200">
               Explore Gift Shop →
             </Link>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {giftItems.map((product, idx) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
+              <motion.div key={product.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }}>
                 <ProductCard product={product} />
               </motion.div>
             ))}
@@ -204,19 +173,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Craft Tutorials & Guides */}
+      {/* Tutorials, Testimonials, Instagram, Newsletter, Map */}
       <TutorialCards />
-
-      {/* Customer Testimonials */}
       <Testimonials />
-
-      {/* Instagram Gallery */}
       <InstagramGrid />
-
-      {/* Newsletter VIP Signup */}
       <Newsletter />
-
-      {/* Store Location Map & Information */}
       <StoreInfoMap />
     </div>
   );
