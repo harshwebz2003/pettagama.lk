@@ -9,40 +9,37 @@ export const Navbar: React.FC = () => {
   const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
 
   return (
-    <nav className="hidden lg:block bg-royal-800 text-white border-b border-royal-700 shadow-inner">
+    <nav className="hidden lg:block bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 text-white border-b border-amber-800/30 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-12">
-          
-          {/* Left Category Mega Button */}
+        <div className="flex items-center justify-between h-11">
+
+          {/* Category Dropdown */}
           <div className="relative">
             <button
               onMouseEnter={() => setIsCategoryDropdownOpen(true)}
               onMouseLeave={() => setIsCategoryDropdownOpen(false)}
               onClick={() => setIsCategoryDropdownOpen(!isCategoryDropdownOpen)}
-              className="bg-royal-600 hover:bg-royal-700 text-white px-5 py-3 font-bold text-xs uppercase tracking-wider flex items-center space-x-2 transition-colors rounded-t-lg"
+              className="bg-amber-800/30 hover:bg-amber-800/50 text-white px-5 py-2.5 font-bold text-xs uppercase tracking-wider flex items-center space-x-2 transition-colors rounded-t-lg"
             >
               <Menu className="w-4 h-4" />
               <span>All Craft Categories</span>
               <ChevronDown className="w-3.5 h-3.5" />
             </button>
 
-            {/* Category Dropdown Menu */}
             {isCategoryDropdownOpen && (
               <div
                 onMouseEnter={() => setIsCategoryDropdownOpen(true)}
                 onMouseLeave={() => setIsCategoryDropdownOpen(false)}
-                className="absolute top-full left-0 w-64 bg-white text-slate-800 shadow-2xl rounded-b-2xl border border-slate-200 py-2 z-50 animate-in fade-in duration-150"
+                className="absolute top-full left-0 w-64 bg-white text-slate-700 shadow-2xl rounded-b-2xl border border-rose-100 py-2 z-50 animate-in fade-in duration-150"
               >
                 {categories.map((cat) => (
                   <Link
                     key={cat.id}
                     href={`/category/${cat.slug}`}
-                    className="flex items-center justify-between px-4 py-2.5 text-xs font-semibold hover:bg-royal-50 hover:text-royal-700 transition-colors"
+                    className="flex items-center justify-between px-4 py-2.5 text-xs font-semibold hover:bg-amber-50 hover:text-amber-700 transition-colors"
                   >
                     <span>{cat.name}</span>
-                    <span className="text-[10px] bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">
-                      {cat.itemCount}
-                    </span>
+                    <span className="text-[10px] bg-rose-50 text-slate-400 px-2 py-0.5 rounded-full">{cat.itemCount}</span>
                   </Link>
                 ))}
               </div>
@@ -51,42 +48,31 @@ export const Navbar: React.FC = () => {
 
           {/* Nav Links */}
           <div className="flex items-center space-x-5 text-xs font-semibold">
-            <Link href="/" className="hover:text-amber-300 transition-colors py-3">
-              Home
-            </Link>
-            <Link href="/shop" className="hover:text-amber-300 transition-colors py-3 flex items-center space-x-1">
-              <Layers className="w-3.5 h-3.5 text-royal-300" />
+            <Link href="/" className="hover:text-amber-200 transition-colors py-2.5">Home</Link>
+            <Link href="/shop" className="hover:text-amber-200 transition-colors py-2.5 flex items-center space-x-1">
+              <Layers className="w-3.5 h-3.5 text-amber-200" />
               <span>Shop All Products</span>
             </Link>
-            <Link href="/category/resin-products" className="hover:text-amber-300 transition-colors py-3">
-              Resin & Moulds
-            </Link>
-
-            <Link href="/category/craft-kits" className="hover:text-amber-300 transition-colors py-3 flex items-center space-x-1">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            <Link href="/category/resin-products" className="hover:text-amber-200 transition-colors py-2.5">Resin & Moulds</Link>
+            <Link href="/category/craft-kits" className="hover:text-amber-200 transition-colors py-2.5 flex items-center space-x-1">
+              <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
               <span>Craft Kits</span>
             </Link>
-
-            <Link href="/category/gift-items" className="hover:text-amber-300 transition-colors py-3 flex items-center space-x-1">
-              <Gift className="w-3.5 h-3.5 text-pink-400" />
+            <Link href="/category/gift-items" className="hover:text-amber-200 transition-colors py-2.5 flex items-center space-x-1">
+              <Gift className="w-3.5 h-3.5 text-rose-200" />
               <span>Gift Items</span>
             </Link>
-
-            <Link href="/blog" className="hover:text-amber-300 transition-colors py-3">
-              Craft Tutorials
-            </Link>
-            <Link href="/about" className="hover:text-amber-300 transition-colors py-3">
-              About Us
-            </Link>
+            <Link href="/blog" className="hover:text-amber-200 transition-colors py-2.5">Craft Tutorials</Link>
+            <Link href="/about" className="hover:text-amber-200 transition-colors py-2.5">About Us</Link>
           </div>
 
-          {/* Right Action: WhatsApp Catalog & Track Order */}
+          {/* Right Actions */}
           <div className="flex items-center space-x-3">
             <a
               href="https://wa.me/c/130129573445815"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-1 text-xs font-extrabold text-emerald-300 hover:text-white transition-colors bg-emerald-950/70 px-3 py-1.5 rounded-full border border-emerald-700/60"
+              className="flex items-center space-x-1 text-xs font-extrabold text-white hover:text-emerald-200 transition-colors bg-emerald-600/40 hover:bg-emerald-600/60 px-3 py-1.5 rounded-full border border-emerald-300/30"
             >
               <span>📱 WhatsApp Catalog</span>
               <ExternalLink className="w-3 h-3" />
@@ -94,7 +80,7 @@ export const Navbar: React.FC = () => {
 
             <Link
               href="/track-order"
-              className="flex items-center space-x-1.5 text-xs font-bold text-amber-300 hover:text-white transition-colors bg-royal-900/60 px-3 py-1.5 rounded-full border border-royal-700"
+              className="flex items-center space-x-1.5 text-xs font-bold text-white hover:text-amber-200 transition-colors bg-amber-800/30 hover:bg-amber-800/50 px-3 py-1.5 rounded-full border border-white/20"
             >
               <PackageCheck className="w-3.5 h-3.5" />
               <span>Track Order</span>

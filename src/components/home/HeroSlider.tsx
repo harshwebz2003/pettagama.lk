@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Sparkles, ChevronLeft, ChevronRight, ShoppingBag, Heart, ShieldCheck, Star } from 'lucide-react';
+import { ArrowRight, Sparkles, ChevronLeft, ChevronRight, ShoppingBag, Star } from 'lucide-react';
 
 const heroSlides = [
   {
@@ -67,15 +67,15 @@ export const HeroSlider: React.FC = () => {
   const slide = heroSlides[currentSlide];
 
   return (
-    <section className="relative bg-slate-950 text-white overflow-hidden py-16 sm:py-24 md:py-32 border-b border-slate-800/80">
+    <section className="relative bg-gradient-to-br from-[#fdf6f0] via-[#fef0e8] to-[#f5ede8] text-slate-800 overflow-hidden py-16 sm:py-24 md:py-32 border-b border-rose-100/60">
       
-      {/* Background Ambient Glowing Blobs */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-royal-600/30 rounded-full blur-[140px] pointer-events-none animate-blob" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-rose-500/20 rounded-full blur-[140px] pointer-events-none animate-blob" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/15 rounded-full blur-[160px] pointer-events-none" />
+      {/* Background Soft Ambient Blobs */}
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-rose-200/40 rounded-full blur-[140px] pointer-events-none animate-blob" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-200/30 rounded-full blur-[140px] pointer-events-none animate-blob" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-100/25 rounded-full blur-[160px] pointer-events-none" />
 
-      {/* Grid Noise Mesh Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
+      {/* Grid Mesh Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e8ddd415_1px,transparent_1px),linear-gradient(to_bottom,#e8ddd415_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <AnimatePresence mode="wait">
@@ -96,9 +96,9 @@ export const HeroSlider: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1 }}
-                className="inline-flex items-center space-x-2 bg-slate-900/90 border border-royal-500/40 text-amber-300 text-xs font-black px-4 py-2 rounded-full shadow-2xl backdrop-blur-xl"
+                className="inline-flex items-center space-x-2 bg-white/80 border border-amber-200/60 text-amber-700 text-xs font-black px-4 py-2 rounded-full shadow-sm backdrop-blur-xl"
               >
-                <Sparkles className="w-3.5 h-3.5 text-amber-400 fill-current animate-pulse" />
+                <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-current animate-pulse" />
                 <span className="tracking-widest uppercase">{slide.badge}</span>
               </motion.div>
 
@@ -109,7 +109,7 @@ export const HeroSlider: React.FC = () => {
                 transition={{ delay: 0.2 }}
                 className="space-y-1"
               >
-                <h1 className="text-4xl sm:text-6xl lg:text-[4.25rem] font-black tracking-tight leading-[1.08] text-white">
+                <h1 className="text-4xl sm:text-6xl lg:text-[4.25rem] font-black tracking-tight leading-[1.08] text-slate-800">
                   {slide.headlineMain}
                 </h1>
                 <span className="block text-4xl sm:text-6xl lg:text-[4.25rem] font-black tracking-tight leading-[1.08] text-shimmer-luxury">
@@ -122,12 +122,12 @@ export const HeroSlider: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal"
+                className="text-slate-500 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal"
               >
                 {slide.description}
               </motion.p>
 
-              {/* Glass CTA Buttons */}
+              {/* Soft CTA Buttons */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -136,7 +136,7 @@ export const HeroSlider: React.FC = () => {
               >
                 <Link
                   href={slide.primaryCta.link}
-                  className="w-full sm:w-auto bg-gradient-to-r from-royal-600 via-royal-500 to-indigo-600 hover:from-royal-500 hover:to-royal-700 text-white font-extrabold px-9 py-4 rounded-2xl shadow-[0_0_30px_rgba(37,99,235,0.4)] flex items-center justify-center space-x-3 transition-all transform hover:-translate-y-1 text-xs uppercase tracking-widest animate-glow-pulse"
+                  className="w-full sm:w-auto bg-gradient-to-r from-amber-700 via-amber-600 to-orange-600 hover:from-amber-600 hover:to-amber-800 text-white font-extrabold px-9 py-4 rounded-2xl shadow-lg flex items-center justify-center space-x-3 transition-all transform hover:-translate-y-1 text-xs uppercase tracking-widest animate-glow-pulse"
                 >
                   <ShoppingBag className="w-4 h-4" />
                   <span>{slide.primaryCta.text}</span>
@@ -145,7 +145,7 @@ export const HeroSlider: React.FC = () => {
 
                 <Link
                   href={slide.secondaryCta.link}
-                  className="w-full sm:w-auto glass-button text-white font-bold px-8 py-4 rounded-2xl transition-all text-xs text-center uppercase tracking-widest"
+                  className="w-full sm:w-auto glass-button text-slate-700 font-bold px-8 py-4 rounded-2xl transition-all text-xs text-center uppercase tracking-widest hover:bg-white/90"
                 >
                   {slide.secondaryCta.text}
                 </Link>
@@ -156,57 +156,57 @@ export const HeroSlider: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="pt-6 border-t border-slate-800/80 flex items-center justify-center lg:justify-start gap-8"
+                className="pt-6 border-t border-rose-200/50 flex items-center justify-center lg:justify-start gap-8"
               >
                 <div>
-                  <span className="text-2xl font-black text-white block">500+</span>
+                  <span className="text-2xl font-black text-slate-700 block">500+</span>
                   <span className="text-[11px] text-slate-400 uppercase font-semibold tracking-wider">Craft Supplies</span>
                 </div>
-                <div className="h-8 w-px bg-slate-800" />
+                <div className="h-8 w-px bg-rose-200/60" />
                 <div>
-                  <span className="text-2xl font-black text-amber-400 block">4.9 ★</span>
+                  <span className="text-2xl font-black text-amber-600 block">4.9 ★</span>
                   <span className="text-[11px] text-slate-400 uppercase font-semibold tracking-wider">2,000+ Reviews</span>
                 </div>
-                <div className="h-8 w-px bg-slate-800" />
+                <div className="h-8 w-px bg-rose-200/60" />
                 <div>
-                  <span className="text-2xl font-black text-emerald-400 block">24h</span>
+                  <span className="text-2xl font-black text-emerald-600 block">24h</span>
                   <span className="text-[11px] text-slate-400 uppercase font-semibold tracking-wider">Fast Courier</span>
                 </div>
               </motion.div>
 
             </div>
 
-            {/* Right Column: Floating Luxury 3D Card */}
+            {/* Right Column: Floating Luxury Card */}
             <div className="lg:col-span-5 relative order-1 lg:order-2">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9, rotateY: -10 }}
                 animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                 transition={{ duration: 0.7 }}
-                className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)] border border-royal-500/30 glass-card-dark animate-float-gentle group"
+                className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_rgba(160,97,109,0.2)] border border-rose-200/40 bg-white/50 animate-float-gentle group"
               >
                 <Image
                   src={slide.image}
                   alt={slide.headlineMain}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
                   priority
                 />
                 
                 {/* Vignette Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent opacity-70" />
 
                 {/* Floating Glass Item Pill */}
-                <div className="absolute bottom-5 left-5 right-5 glass-card-dark p-4 rounded-2xl shadow-2xl flex items-center justify-between border border-white/20">
+                <div className="absolute bottom-5 left-5 right-5 bg-white/90 backdrop-blur-lg p-4 rounded-2xl shadow-xl flex items-center justify-between border border-rose-100/60">
                   <div>
-                    <div className="flex items-center space-x-1 text-amber-400 text-[10px] font-bold uppercase tracking-widest mb-0.5">
+                    <div className="flex items-center space-x-1 text-amber-600 text-[10px] font-bold uppercase tracking-widest mb-0.5">
                       <Star className="w-3 h-3 fill-current" />
                       <span>{slide.featuredItem.rating}</span>
                     </div>
-                    <h4 className="text-xs font-bold text-white truncate max-w-[200px]">
+                    <h4 className="text-xs font-bold text-slate-700 truncate max-w-[200px]">
                       {slide.featuredItem.name}
                     </h4>
                   </div>
-                  <span className="text-xs font-black text-white bg-royal-600 px-3.5 py-2 rounded-xl shadow-md border border-royal-400/50">
+                  <span className="text-xs font-black text-white bg-amber-600 px-3.5 py-2 rounded-xl shadow-md">
                     {slide.featuredItem.price}
                   </span>
                 </div>
@@ -217,14 +217,14 @@ export const HeroSlider: React.FC = () => {
         </AnimatePresence>
 
         {/* Carousel Slide Indicators */}
-        <div className="flex items-center justify-between mt-12 pt-6 border-t border-slate-800/80">
+        <div className="flex items-center justify-between mt-12 pt-6 border-t border-rose-200/40">
           <div className="flex space-x-3 items-center">
             {heroSlides.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentSlide(idx)}
                 className={`h-2.5 rounded-full transition-all duration-300 ${
-                  currentSlide === idx ? 'w-10 bg-amber-400 shadow-md' : 'w-2.5 bg-slate-800'
+                  currentSlide === idx ? 'w-10 bg-amber-500 shadow-md' : 'w-2.5 bg-rose-200'
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
@@ -234,14 +234,14 @@ export const HeroSlider: React.FC = () => {
           <div className="flex space-x-2">
             <button
               onClick={() => setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1))}
-              className="p-3 rounded-2xl glass-button text-white transition-all"
+              className="p-3 rounded-2xl glass-button text-slate-600 hover:text-slate-800 transition-all"
               aria-label="Previous slide"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
-              className="p-3 rounded-2xl glass-button text-white transition-all"
+              className="p-3 rounded-2xl glass-button text-slate-600 hover:text-slate-800 transition-all"
               aria-label="Next slide"
             >
               <ChevronRight className="w-4 h-4" />
