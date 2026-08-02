@@ -9,7 +9,7 @@ import { AcceptedPaymentMethods } from '../common/AcceptedPaymentMethods';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#fdf8f4] text-slate-600 pt-16 pb-24 lg:pb-12 border-t border-rose-100/60">
+    <footer className="footer-periwinkle-bg text-slate-600 pt-16 pb-24 lg:pb-12 border-t border-[#B8C0FF]/50 shadow-inner">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Top 4 Benefits Banner */}
@@ -52,22 +52,22 @@ export const Footer: React.FC = () => {
 
           {/* Top Categories */}
           <div>
-            <h4 className="text-xs font-black text-amber-600 uppercase tracking-widest mb-4 border-l-2 border-amber-400 pl-2">Popular Categories</h4>
+            <h4 className="text-xs font-black text-[#5A60C8] uppercase tracking-widest mb-4 border-l-2 border-[#8D93E8] pl-2">Popular Categories</h4>
             <ul className="space-y-2 text-xs">
               {categories.slice(0, 7).map((cat) => (
-                <li key={cat.id}><Link href={`/category/${cat.slug}`} className="text-slate-400 hover:text-amber-700 transition-colors">{cat.name}</Link></li>
+                <li key={cat.id}><Link href={`/category/${cat.slug}`} className="text-slate-500 hover:text-[#5A60C8] transition-colors">{cat.name}</Link></li>
               ))}
             </ul>
           </div>
 
           {/* Customer Service */}
           <div>
-            <h4 className="text-xs font-black text-amber-600 uppercase tracking-widest mb-4 border-l-2 border-amber-400 pl-2">Customer Service</h4>
+            <h4 className="text-xs font-black text-[#5A60C8] uppercase tracking-widest mb-4 border-l-2 border-[#8D93E8] pl-2">Customer Service</h4>
             <ul className="space-y-2 text-xs">
-              <li><Link href="/shop" className="text-slate-400 hover:text-amber-700 transition-colors">Shop All Products</Link></li>
-              <li><Link href="/track-order" className="text-slate-400 hover:text-amber-700 transition-colors">Track Your Order</Link></li>
-              <li><Link href="/cart" className="text-slate-400 hover:text-amber-700 transition-colors">Shopping Cart</Link></li>
-              <li><Link href="/wishlist" className="text-slate-400 hover:text-amber-700 transition-colors">My Wishlist</Link></li>
+              <li><Link href="/shop" className="text-slate-500 hover:text-[#5A60C8] transition-colors">Shop All Products</Link></li>
+              <li><Link href="/track-order" className="text-slate-500 hover:text-[#5A60C8] transition-colors">Track Your Order</Link></li>
+              <li><Link href="/cart" className="text-slate-500 hover:text-[#5A60C8] transition-colors">Shopping Cart</Link></li>
+              <li><Link href="/wishlist" className="text-slate-500 hover:text-[#5A60C8] transition-colors">My Wishlist</Link></li>
               <li>
                 <a href="https://wa.me/c/130129573445815" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 font-bold transition-colors">
                   📱 WhatsApp Catalog
@@ -78,24 +78,24 @@ export const Footer: React.FC = () => {
 
           {/* About */}
           <div>
-            <h4 className="text-xs font-black text-amber-600 uppercase tracking-widest mb-4 border-l-2 border-amber-400 pl-2">About Us</h4>
+            <h4 className="text-xs font-black text-[#5A60C8] uppercase tracking-widest mb-4 border-l-2 border-[#8D93E8] pl-2">About Us</h4>
             <ul className="space-y-2 text-xs">
-              <li><Link href="/about" className="text-slate-400 hover:text-amber-700 transition-colors">Our Kalutara Store</Link></li>
-              <li><Link href="/contact" className="text-slate-400 hover:text-amber-700 transition-colors">Contact Us & Map</Link></li>
-              <li><Link href="/login" className="text-slate-400 hover:text-amber-700 transition-colors">Account Sign In</Link></li>
+              <li><Link href="/about" className="text-slate-500 hover:text-[#5A60C8] transition-colors">Our Kalutara Store</Link></li>
+              <li><Link href="/contact" className="text-slate-500 hover:text-[#5A60C8] transition-colors">Contact Us &amp; Map</Link></li>
+              <li><Link href="/login" className="text-slate-500 hover:text-[#5A60C8] transition-colors">Account Sign In</Link></li>
             </ul>
           </div>
         </div>
 
         {/* Accepted Payment Methods */}
-        <div className="py-6 border-b border-rose-100/60 my-2">
+        <div className="py-6 border-b border-[#B8C0FF]/50 my-2">
           <AcceptedPaymentMethods variant="footer" />
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="pt-5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>© {new Date().getFullYear()} Pettagama.lk. All rights reserved. 241 Galle Road, Kalutara, Sri Lanka.</div>
-          <div className="bg-white px-3.5 py-1.5 rounded-full border border-rose-100 text-amber-700 text-[11px] font-medium shadow-sm">
+          <div className="bg-white/90 px-3.5 py-1.5 rounded-full border border-[#B8C0FF] text-[#5A60C8] text-[11px] font-bold shadow-sm">
             Concept Website Demo by Harsh Apex Digital Solutions
           </div>
         </div>

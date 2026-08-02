@@ -3,49 +3,49 @@
 @tailwind utilities;
 
 /* ============================================================
-   OCEAN BREEZE GRADIENT SYSTEM — #DFF7FF · #7FCDFF · #29ABE2
+   DREAMY PERIWINKLE GRADIENT SYSTEM — #E7D8FF · #B8C0FF · #8D93E8
    ============================================================ */
 
 @layer base {
   :root {
-    --ob-lightest: #DFF7FF;   /* Light Sky Blue */
-    --ob-mid:      #7FCDFF;   /* Soft Ocean Blue */
-    --ob-deep:     #29ABE2;   /* Deep Ocean Blue */
-    --ob-white:    #FFFFFF;
+    --pw-lightest: #E7D8FF;   /* Soft Lavender / Light Lilac */
+    --pw-mid:      #B8C0FF;   /* Dreamy Periwinkle Blue */
+    --pw-deep:     #8D93E8;   /* Deep Periwinkle Accent */
+    --pw-white:    #FFFFFF;
   }
 
   body {
     @apply text-slate-800 antialiased font-sans overflow-x-hidden;
     background: linear-gradient(
       135deg,
-      #DFF7FF 0%,
-      #7FCDFF 30%,
-      #DFF7FF 60%,
-      #29ABE2 85%,
-      #DFF7FF 100%
+      #E7D8FF 0%,
+      #F5EEFF 25%,
+      #B8C0FF 50%,
+      #FFFFFF 75%,
+      #E7D8FF 100%
     );
     background-size: 400% 400%;
-    animation: oceanGradientShift 16s ease-in-out infinite;
+    animation: periwinkleGradientShift 18s ease-in-out infinite;
     min-height: 100vh;
   }
 
   ::selection {
-    background: rgba(41, 171, 226, 0.35);
-    color: #02598b;
+    background: rgba(141, 147, 232, 0.35);
+    color: #4a4fb0;
   }
 }
 
-/* Keyframes for Smooth Ocean Breeze Gradient Shift */
-@keyframes oceanGradientShift {
+/* Keyframes for Smooth Dreamy Periwinkle Shift */
+@keyframes periwinkleGradientShift {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
 @keyframes ambientBlob {
-  0%, 100% { transform: translate(0px, 0px) scale(1); opacity: 0.30; }
-  33%       { transform: translate(40px, -50px) scale(1.15); opacity: 0.45; }
-  66%       { transform: translate(-30px, 30px) scale(0.90); opacity: 0.35; }
+  0%, 100% { transform: translate(0px, 0px) scale(1); opacity: 0.35; }
+  33%       { transform: translate(40px, -50px) scale(1.15); opacity: 0.50; }
+  66%       { transform: translate(-30px, 30px) scale(0.90); opacity: 0.40; }
 }
 
 @keyframes textGradientShimmer {
@@ -61,10 +61,10 @@
 
 @keyframes buttonGlowPulse {
   0%, 100% { 
-    box-shadow: 0 0 20px rgba(41, 171, 226, 0.40), 0 0 40px rgba(127, 205, 255, 0.25); 
+    box-shadow: 0 0 20px rgba(141, 147, 232, 0.45), 0 0 40px rgba(184, 192, 255, 0.30); 
   }
   50% { 
-    box-shadow: 0 0 35px rgba(41, 171, 226, 0.70), 0 0 60px rgba(127, 205, 255, 0.45); 
+    box-shadow: 0 0 35px rgba(141, 147, 232, 0.75), 0 0 60px rgba(184, 192, 255, 0.50); 
   }
 }
 
@@ -92,14 +92,14 @@
   animation: marquee-vertical var(--duration, 30s) linear infinite;
 }
 
-/* Gradient Typography — Ocean Breeze */
+/* Gradient Typography — Dreamy Periwinkle */
 .text-shimmer-luxury {
   background: linear-gradient(
     135deg,
-    #0277BD 0%,
-    #29ABE2 35%,
-    #7FCDFF 65%,
-    #0277BD 100%
+    #5A60C8 0%,
+    #8D93E8 35%,
+    #B8C0FF 65%,
+    #5A60C8 100%
   );
   background-size: 300% 300%;
   -webkit-background-clip: text;
@@ -107,29 +107,29 @@
   animation: textGradientShimmer 6s ease infinite;
 }
 
-.text-gradient-ocean {
-  background: linear-gradient(135deg, #0277BD 0%, #29ABE2 50%, #7FCDFF 100%);
+.text-gradient-periwinkle {
+  background: linear-gradient(135deg, #5A60C8 0%, #8D93E8 50%, #B8C0FF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Glassmorphism Styles — Ocean Breeze */
+/* Glassmorphism Styles — Dreamy Periwinkle */
 .glass-header {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(127, 205, 255, 0.4);
+  border-bottom: 1px solid rgba(184, 192, 255, 0.5);
 }
 
-.glass-card-blue {
+.glass-card-periwinkle {
   background: linear-gradient(
     135deg,
-    rgba(223, 247, 255, 0.85) 0%,
+    rgba(231, 216, 255, 0.85) 0%,
     rgba(255, 255, 255, 0.95) 100%
   );
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(127, 205, 255, 0.4);
+  border: 1px solid rgba(184, 192, 255, 0.5);
 }
 
 .glass-card-light {
@@ -140,42 +140,56 @@
 }
 
 .glass-button {
-  background: rgba(223, 247, 255, 0.70);
+  background: rgba(231, 216, 255, 0.70);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(127, 205, 255, 0.50);
+  border: 1px solid rgba(184, 192, 255, 0.60);
 }
 .glass-button:hover {
-  background: rgba(223, 247, 255, 0.95);
-  border-color: rgba(41, 171, 226, 0.70);
+  background: rgba(231, 216, 255, 0.95);
+  border-color: rgba(141, 147, 232, 0.80);
 }
 
-/* Section Backgrounds */
+/* Hero Section — Dreamy Periwinkle Animated Background */
 .hero-logo-bg {
   background: linear-gradient(
     135deg,
-    #DFF7FF 0%,
-    #7FCDFF 40%,
-    #DFF7FF 70%,
-    #29ABE2 100%
+    #E7D8FF 0%,
+    #B8C0FF 40%,
+    #E7D8FF 70%,
+    #8D93E8 100%
   );
   background-size: 300% 300%;
-  animation: oceanGradientShift 14s ease-in-out infinite;
+  animation: periwinkleGradientShift 14s ease-in-out infinite;
+}
+
+/* Footer Section — Dreamy Periwinkle Animated Background */
+.footer-periwinkle-bg {
+  background: linear-gradient(
+    135deg,
+    #F3ECFF 0%,
+    #E7D8FF 40%,
+    #F7F3FF 70%,
+    #B8C0FF 100%
+  );
+  background-size: 300% 300%;
+  animation: periwinkleGradientShift 16s ease-in-out infinite;
+}
+
+/* Section Backgrounds */
+.section-periwinkle-tint {
+  background: linear-gradient(135deg, rgba(231, 216, 255, 0.6) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(184, 192, 255, 0.4) 100%);
 }
 
 .section-blue-tint {
-  background: linear-gradient(135deg, rgba(223, 247, 255, 0.7) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(127, 205, 255, 0.4) 100%);
+  background: linear-gradient(135deg, rgba(231, 216, 255, 0.5) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(184, 192, 255, 0.3) 100%);
 }
 
-.section-mid-tint {
-  background: linear-gradient(135deg, rgba(127, 205, 255, 0.3) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(223, 247, 255, 0.6) 100%);
-}
-
-/* Custom Scrollbar — Ocean Breeze */
+/* Custom Scrollbar — Dreamy Periwinkle */
 ::-webkit-scrollbar       { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: #DFF7FF; }
-::-webkit-scrollbar-thumb { background: #7FCDFF; border-radius: 9999px; }
-::-webkit-scrollbar-thumb:hover { background: #29ABE2; }
+::-webkit-scrollbar-track { background: #E7D8FF; }
+::-webkit-scrollbar-thumb { background: #B8C0FF; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #8D93E8; }
 
 /* Utilities */
 .scrollbar-none::-webkit-scrollbar { display: none; }

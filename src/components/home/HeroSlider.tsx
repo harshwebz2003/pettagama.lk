@@ -38,7 +38,7 @@ function FloatingPaths() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
       <svg
-        className="w-full h-full text-[#29ABE2]"
+        className="w-full h-full text-[#8D93E8]"
         viewBox="0 0 696 316"
         fill="none"
       >
@@ -49,12 +49,12 @@ function FloatingPaths() {
             d={path.d}
             stroke="currentColor"
             strokeWidth={path.width}
-            strokeOpacity={0.12 + path.id * 0.015}
+            strokeOpacity={0.15 + path.id * 0.015}
             fill="none"
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{
               pathLength: [0, 1, 1, 0],
-              opacity: [0, 0.65, 0.65, 0],
+              opacity: [0, 0.7, 0.7, 0],
             }}
             transition={{
               duration: 14 + index * 0.4,
@@ -170,9 +170,9 @@ export const HeroSlider: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1 }}
-                className="inline-flex items-center space-x-2 bg-white/90 border border-sky-200/80 text-[#0277BD] text-xs font-black px-4 py-2 rounded-full shadow-sm backdrop-blur-xl"
+                className="inline-flex items-center space-x-2 bg-white/95 border border-[#B8C0FF] text-[#5A60C8] text-xs font-black px-4 py-2 rounded-full shadow-sm backdrop-blur-xl"
               >
-                <Sparkles className="w-3.5 h-3.5 text-[#29ABE2] fill-current animate-pulse" />
+                <Sparkles className="w-3.5 h-3.5 text-[#8D93E8] fill-current animate-pulse" />
                 <span className="tracking-widest uppercase">{slide.badge}</span>
               </motion.div>
 
@@ -210,7 +210,7 @@ export const HeroSlider: React.FC = () => {
               >
                 <Link
                   href={slide.primaryCta.link}
-                  className="w-full sm:w-auto bg-gradient-to-r from-[#29ABE2] via-[#0288D1] to-[#01579B] hover:from-[#0288D1] hover:to-[#01579B] text-white font-extrabold px-9 py-4 rounded-2xl shadow-lg flex items-center justify-center space-x-3 transition-all transform hover:-translate-y-1 text-xs uppercase tracking-widest animate-glow-pulse"
+                  className="w-full sm:w-auto bg-gradient-to-r from-[#8D93E8] via-[#6C72E0] to-[#4A4FB0] hover:from-[#6C72E0] hover:to-[#4A4FB0] text-white font-extrabold px-9 py-4 rounded-2xl shadow-lg flex items-center justify-center space-x-3 transition-all transform hover:-translate-y-1 text-xs uppercase tracking-widest animate-glow-pulse"
                 >
                   <ShoppingBag className="w-4 h-4" />
                   <span>{slide.primaryCta.text}</span>
