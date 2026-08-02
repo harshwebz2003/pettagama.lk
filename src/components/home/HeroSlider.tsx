@@ -10,27 +10,28 @@ import { ArrowRight, Sparkles, ChevronLeft, ChevronRight, ShoppingBag, Star, Tru
    BACKGROUND VIDEO COMPONENT (MEMOIZED TO PREVENT RE-RENDER FREEZES)
    ============================================================ */
 const HeroBackgroundVideo = memo(() => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const playVideo = async () => {
+    const playVideos = async () => {
       try {
-        if (video.paused) {
-          await video.play();
+        if (desktopVideoRef.current && desktopVideoRef.current.paused) {
+          await desktopVideoRef.current.play();
+        }
+        if (mobileVideoRef.current && mobileVideoRef.current.paused) {
+          await mobileVideoRef.current.play();
         }
       } catch (err) {
         console.log('Autoplay handled:', err);
       }
     };
 
-    playVideo();
+    playVideos();
 
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
-        playVideo();
+        playVideos();
       }
     };
 
@@ -42,8 +43,9 @@ const HeroBackgroundVideo = memo(() => {
 
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 bg-[#DFF7FF]">
+      {/* Desktop & Tablet Video (Landscape) */}
       <video
-        ref={videoRef}
+        ref={desktopVideoRef}
         autoPlay
         loop
         muted
@@ -54,12 +56,31 @@ const HeroBackgroundVideo = memo(() => {
         // @ts-ignore
         disableRemotePlayback
         onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
-        className="w-full h-full object-cover opacity-65 mix-blend-multiply scale-105 transform-gpu will-change-transform"
+        className="hidden md:block w-full h-full object-cover opacity-85 mix-blend-multiply scale-105 transform-gpu will-change-transform"
       >
         <source src="/Create_intro_video_e-commerce_202608030043.mp4" type="video/mp4" />
       </video>
+
+      {/* Mobile Video (Portrait 9:16) */}
+      <video
+        ref={mobileVideoRef}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        // @ts-ignore
+        disablePictureInPicture
+        // @ts-ignore
+        disableRemotePlayback
+        onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
+        className="block md:hidden w-full h-full object-cover opacity-85 mix-blend-multiply scale-105 transform-gpu will-change-transform"
+      >
+        <source src="/Remake_last_video_9_16_1080p_202608030056.mp4" type="video/mp4" />
+      </video>
+
       {/* Soft Glass Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/20 to-white/60 backdrop-blur-[1px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/10 to-white/50 backdrop-blur-[1px]" />
     </div>
   );
 });
