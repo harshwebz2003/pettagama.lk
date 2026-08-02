@@ -50,10 +50,21 @@ export const AcceptedPaymentMethods: React.FC<AcceptedPaymentMethodsProps> = ({
           />
         </div>
 
-        {/* PayHere */}
-        <div className="h-9 px-3 bg-[#1a237e] text-white rounded-xl shadow-sm flex items-center justify-center hover:bg-[#283593] transition-all">
-          <span className="font-black text-[11px] text-blue-200 tracking-wider">PayHere</span>
-        </div>
+        {/* PayHere — Official Banner */}
+        <a
+          href="https://www.payhere.lk"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="h-9 flex items-center justify-center rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all"
+          title="PayHere — Secure Online Payments"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://www.payhere.lk/downloads/images/payhere_short_banner_dark.png"
+            alt="PayHere"
+            style={{ height: '36px', width: 'auto' }}
+          />
+        </a>
 
         {/* Bank Transfer */}
         <div className="h-9 px-3 bg-white rounded-xl border border-slate-200 shadow-sm flex items-center justify-center space-x-1 hover:border-slate-300 transition-all">
