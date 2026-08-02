@@ -156,12 +156,12 @@ export const HeroSlider: React.FC = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-30 mix-blend-multiply scale-105"
+          className="w-full h-full object-cover opacity-65 mix-blend-multiply scale-105"
         >
           <source src="/Create_intro_video_e-commerce_202608030043.mp4" type="video/mp4" />
         </video>
         {/* Soft Glass Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/80 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/20 to-white/60 backdrop-blur-[1px]" />
       </div>
 
       {/* 1. Abstract Flowing SVG Line Artwork */}
