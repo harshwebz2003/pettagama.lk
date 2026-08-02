@@ -76,7 +76,7 @@ const HeroBackgroundVideo = memo(() => {
         onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
         className="block md:hidden w-full h-full object-cover opacity-85 mix-blend-multiply scale-105 transform-gpu will-change-transform"
       >
-        <source src="/Remake_last_video_9_16_1080p_202608030056.mp4" type="video/mp4" />
+        <source src="/Intro_video_for_පෙට්ටගම.LK_202608030108 (1).mp4" type="video/mp4" />
       </video>
 
       {/* Soft Glass Overlay Gradient */}
