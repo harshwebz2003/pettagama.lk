@@ -1,17 +1,22 @@
-'use client';
-
 import React from 'react';
-import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { blogPosts } from '@/data/blogs';
 import { ArrowLeft, Clock, User, Tag } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
-export default function BlogPostDetail() {
-  const params = useParams();
-  const slug = params?.slug as string;
+export function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
-  const post = blogPosts.find((b) => b.slug === slug) || blogPosts[0];
+export default function BlogPostDetail({ params }: { params: { slug: string } }) {
+  const post = blogPosts.find((b) => b.slug === params.slug) || blogPosts[0];
+
+  if (!post) {
+    notFound();
+  }
 
   return (
     <div className="bg-slate-50 min-h-screen py-12">
@@ -19,7 +24,7 @@ export default function BlogPostDetail() {
         
         <Link
           href="/blog"
-          className="inline-flex items-center space-x-2 text-xs font-bold text-royal-700 hover:text-royal-800"
+          className="inline-flex items-center space-x-2 text-xs font-bold text-sky-700 hover:text-sky-800"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to All Tutorials</span>
@@ -27,7 +32,7 @@ export default function BlogPostDetail() {
 
         <article className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-6">
           <div className="space-y-3">
-            <span className="inline-block bg-royal-100 text-royal-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            <span className="inline-block bg-sky-100 text-sky-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
               {post.category}
             </span>
 
@@ -37,7 +42,7 @@ export default function BlogPostDetail() {
 
             <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400 border-b border-slate-100 pb-4">
               <span className="flex items-center space-x-1 font-semibold text-slate-700">
-                <User className="w-3.5 h-3.5 text-royal-600" />
+                <User className="w-3.5 h-3.5 text-sky-600" />
                 <span>{post.author}</span>
               </span>
               <span>•</span>

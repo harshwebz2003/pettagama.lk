@@ -1,7 +1,4 @@
-'use client';
-
 import React from 'react';
-import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { categories } from '@/data/categories';
@@ -9,9 +6,14 @@ import { products } from '@/data/products';
 import { ProductCard } from '@/components/common/ProductCard';
 import { ArrowLeft, Sparkles } from 'lucide-react';
 
-export default function CategoryPage() {
-  const params = useParams();
-  const slug = params?.slug as string;
+export function generateStaticParams() {
+  return categories.map((c) => ({
+    slug: c.slug,
+  }));
+}
+
+export default function CategoryPage({ params }: { params: { slug: string } }) {
+  const slug = params.slug;
 
   const category = categories.find((c) => c.slug === slug) || {
     id: slug,
@@ -33,14 +35,14 @@ export default function CategoryPage() {
         {/* Back Link */}
         <Link
           href="/shop"
-          className="inline-flex items-center space-x-2 text-xs font-extrabold text-royal-700 hover:text-royal-800 transition-colors"
+          className="inline-flex items-center space-x-2 text-xs font-extrabold text-sky-700 hover:text-sky-800 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to All Categories</span>
         </Link>
 
         {/* Category Hero Banner */}
-        <div className="relative rounded-3xl bg-royal-900 text-white overflow-hidden shadow-xl p-8 sm:p-12 border border-royal-700">
+        <div className="relative rounded-3xl bg-gradient-to-r from-[#0277BD] via-[#29ABE2] to-[#7FCDFF] text-white overflow-hidden shadow-xl p-8 sm:p-12 border border-sky-300/40">
           <div className="absolute inset-0 opacity-20">
             <Image
               src={category.image}
@@ -50,12 +52,12 @@ export default function CategoryPage() {
             />
           </div>
           <div className="relative z-10 max-w-2xl space-y-3">
-            <div className="inline-flex items-center space-x-1.5 bg-royal-700/80 backdrop-blur-md px-3.5 py-1 rounded-full text-amber-300 text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center space-x-1.5 bg-white/20 backdrop-blur-md px-3.5 py-1 rounded-full text-white text-xs font-bold uppercase tracking-wider border border-white/30">
+              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
               <span>Category Collection</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-black tracking-tight">{category.name}</h1>
-            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+            <p className="text-xs sm:text-sm text-sky-50 leading-relaxed">
               {category.description}
             </p>
             <span className="inline-block text-xs font-bold bg-white/10 px-3 py-1 rounded-full text-white border border-white/20">
@@ -77,7 +79,7 @@ export default function CategoryPage() {
             <p className="text-xs text-slate-500">Check back soon or explore our other craft categories!</p>
             <Link
               href="/shop"
-              className="inline-block bg-royal-600 text-white font-bold text-xs px-6 py-3 rounded-2xl hover:bg-royal-700 transition-colors"
+              className="inline-block bg-[#29ABE2] text-white font-bold text-xs px-6 py-3 rounded-2xl hover:bg-[#0277BD] transition-colors"
             >
               Shop All Products
             </Link>
