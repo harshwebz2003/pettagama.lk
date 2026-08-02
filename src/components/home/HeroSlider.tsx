@@ -6,6 +6,69 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Sparkles, ChevronLeft, ChevronRight, ShoppingBag, Star } from 'lucide-react';
 
+function FloatingPaths() {
+  const paths = Array.from({ length: 32 }, (_, i) => {
+    const scale = 180 + i * 12;
+    const offsetX = 348;
+    const offsetY = 158;
+
+    const d = `
+      M ${offsetX - scale} ${offsetY}
+      C ${offsetX - scale} ${offsetY - scale * 0.5}, 
+        ${offsetX - scale * 0.5} ${offsetY - scale * 0.5}, 
+        ${offsetX} ${offsetY}
+      C ${offsetX + scale * 0.5} ${offsetY + scale * 0.5}, 
+        ${offsetX + scale} ${offsetY + scale * 0.5}, 
+        ${offsetX + scale} ${offsetY}
+      C ${offsetX + scale} ${offsetY - scale * 0.5}, 
+        ${offsetX + scale * 0.5} ${offsetY - scale * 0.5}, 
+        ${offsetX} ${offsetY}
+      C ${offsetX - scale * 0.5} ${offsetY + scale * 0.5}, 
+        ${offsetX - scale} ${offsetY + scale * 0.5}, 
+        ${offsetX - scale} ${offsetY}
+    `.replace(/\s+/g, ' ').trim();
+
+    return {
+      id: i,
+      d,
+      width: 0.5 + i * 0.03,
+    };
+  });
+
+  return (
+    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <svg
+        className="w-full h-full text-[#29ABE2]"
+        viewBox="0 0 696 316"
+        fill="none"
+      >
+        <title>Infinity Paths</title>
+        {paths.map((path, index) => (
+          <motion.path
+            key={path.id}
+            d={path.d}
+            stroke="currentColor"
+            strokeWidth={path.width}
+            strokeOpacity={0.12 + path.id * 0.015}
+            fill="none"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{
+              pathLength: [0, 1, 1, 0],
+              opacity: [0, 0.65, 0.65, 0],
+            }}
+            transition={{
+              duration: 14 + index * 0.4,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+              delay: index * 0.15,
+            }}
+          />
+        ))}
+      </svg>
+    </div>
+  );
+}
+
 const heroSlides = [
   {
     id: 1,
@@ -67,15 +130,26 @@ export const HeroSlider: React.FC = () => {
   const slide = heroSlides[currentSlide];
 
   return (
-    <section className="hero-logo-bg relative text-slate-800 overflow-hidden py-12 pb-20 sm:py-24 md:py-32 border-b border-blue-100/60">
+    <section className="hero-logo-bg relative text-slate-800 overflow-hidden py-12 pb-20 sm:py-24 md:py-32 border-b border-sky-100/60">
       
-      {/* Ocean Breeze Ambient Blobs */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#7FCDFF]/40 rounded-full blur-[140px] pointer-events-none animate-blob" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#29ABE2]/30 rounded-full blur-[140px] pointer-events-none animate-blob" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#DFF7FF]/50 rounded-full blur-[160px] pointer-events-none" />
+      {/* Animated Infinity SVG Paths Background */}
+      <FloatingPaths />
 
-      {/* Ocean Breeze Grid Mesh */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#29ABE215_1px,transparent_1px),linear-gradient(to_bottom,#29ABE215_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
+      {/* Ocean Breeze Ambient Glowing Orbs */}
+      <motion.div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+        animate={{
+          scale: [1, 1.15, 1],
+          rotate: [0, 180, 360],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Number.POSITIVE_INFINITY,
+          ease: "linear",
+        }}
+      >
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-sky-300/30 via-blue-400/20 to-teal-300/25 blur-3xl" />
+      </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <AnimatePresence mode="wait">
@@ -91,18 +165,18 @@ export const HeroSlider: React.FC = () => {
             {/* Left Editorial Content Column */}
             <div className="lg:col-span-7 space-y-5 text-center lg:text-left order-1">
               
-              {/* Luxury Badge */}
+              {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1 }}
-                className="inline-flex items-center space-x-2 bg-white/90 border border-[#7FCDFF]/60 text-[#0277BD] text-xs font-black px-4 py-2 rounded-full shadow-sm backdrop-blur-xl"
+                className="inline-flex items-center space-x-2 bg-white/90 border border-sky-200/80 text-[#0277BD] text-xs font-black px-4 py-2 rounded-full shadow-sm backdrop-blur-xl"
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#29ABE2] fill-current animate-pulse" />
                 <span className="tracking-widest uppercase">{slide.badge}</span>
               </motion.div>
 
-              {/* Editorial Large Typography */}
+              {/* Headline */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -156,18 +230,18 @@ export const HeroSlider: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="pt-6 border-t border-rose-200/50 flex items-center justify-center lg:justify-start gap-8"
+                className="pt-6 border-t border-sky-200/50 flex items-center justify-center lg:justify-start gap-8"
               >
                 <div>
-                  <span className="text-2xl font-black text-slate-700 block">500+</span>
+                  <span className="text-2xl font-black text-slate-800 block">500+</span>
                   <span className="text-[11px] text-slate-400 uppercase font-semibold tracking-wider">Craft Supplies</span>
                 </div>
-                <div className="h-8 w-px bg-rose-200/60" />
+                <div className="h-8 w-px bg-sky-200/60" />
                 <div>
-                  <span className="text-2xl font-black text-amber-600 block">4.9 ★</span>
+                  <span className="text-2xl font-black text-amber-500 block">4.9 ★</span>
                   <span className="text-[11px] text-slate-400 uppercase font-semibold tracking-wider">2,000+ Reviews</span>
                 </div>
-                <div className="h-8 w-px bg-rose-200/60" />
+                <div className="h-8 w-px bg-sky-200/60" />
                 <div>
                   <span className="text-2xl font-black text-emerald-600 block">24h</span>
                   <span className="text-[11px] text-slate-400 uppercase font-semibold tracking-wider">Fast Courier</span>
@@ -182,7 +256,7 @@ export const HeroSlider: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9, rotateY: -10 }}
                 animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                 transition={{ duration: 0.7 }}
-                className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_rgba(160,97,109,0.2)] border border-rose-200/40 bg-white/50 animate-float-gentle group"
+                className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_rgba(41,171,226,0.2)] border border-sky-200/60 bg-white/70 backdrop-blur-md animate-float-gentle group"
               >
                 <Image
                   src={slide.image}
@@ -196,9 +270,9 @@ export const HeroSlider: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent opacity-70" />
 
                 {/* Floating Glass Item Pill */}
-                <div className="absolute bottom-5 left-5 right-5 bg-white/90 backdrop-blur-lg p-4 rounded-2xl shadow-xl flex items-center justify-between border border-rose-100/60">
+                <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-lg p-4 rounded-2xl shadow-xl flex items-center justify-between border border-sky-100">
                   <div>
-                    <div className="flex items-center space-x-1 text-amber-600 text-[10px] font-bold uppercase tracking-widest mb-0.5">
+                    <div className="flex items-center space-x-1 text-amber-500 text-[10px] font-bold uppercase tracking-widest mb-0.5">
                       <Star className="w-3 h-3 fill-current" />
                       <span>{slide.featuredItem.rating}</span>
                     </div>
@@ -206,7 +280,7 @@ export const HeroSlider: React.FC = () => {
                       {slide.featuredItem.name}
                     </h4>
                   </div>
-                  <span className="text-xs font-black text-white bg-amber-600 px-3.5 py-2 rounded-xl shadow-md">
+                  <span className="text-xs font-black text-white bg-[#29ABE2] px-3.5 py-2 rounded-xl shadow-md">
                     {slide.featuredItem.price}
                   </span>
                 </div>
@@ -217,14 +291,14 @@ export const HeroSlider: React.FC = () => {
         </AnimatePresence>
 
         {/* Carousel Slide Indicators */}
-        <div className="flex items-center justify-between mt-12 pt-6 border-t border-rose-200/40">
+        <div className="flex items-center justify-between mt-12 pt-6 border-t border-sky-200/50">
           <div className="flex space-x-3 items-center">
             {heroSlides.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentSlide(idx)}
                 className={`h-2.5 rounded-full transition-all duration-300 ${
-                  currentSlide === idx ? 'w-10 bg-amber-500 shadow-md' : 'w-2.5 bg-rose-200'
+                  currentSlide === idx ? 'w-10 bg-[#29ABE2] shadow-md' : 'w-2.5 bg-sky-200'
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
