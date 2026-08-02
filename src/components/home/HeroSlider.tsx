@@ -1,10 +1,61 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, memo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
 import { ArrowRight, Sparkles, ChevronLeft, ChevronRight, ShoppingBag, Star, Truck, ShieldCheck, MessageCircle, Heart } from 'lucide-react';
+
+/* ============================================================
+   BACKGROUND VIDEO COMPONENT (MEMOIZED TO PREVENT RE-RENDER FREEZES)
+   ============================================================ */
+const HeroBackgroundVideo = memo(() => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const playVideo = () => {
+      if (videoRef.current) {
+        videoRef.current.play().catch((err) => {
+          console.log('Autoplay deferred by browser policy:', err);
+        });
+      }
+    };
+
+    playVideo();
+
+    // Re-play on visibility change if user tabs back
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        playVideo();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
+
+  return (
+    <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+      <video
+        ref={videoRef}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="w-full h-full object-cover opacity-65 mix-blend-multiply scale-105"
+      >
+        <source src="/Create_intro_video_e-commerce_202608030043.mp4" type="video/mp4" />
+      </video>
+      {/* Soft Glass Overlay Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/20 to-white/60 backdrop-blur-[1px]" />
+    </div>
+  );
+});
+
+HeroBackgroundVideo.displayName = 'HeroBackgroundVideo';
 
 /* ============================================================
    ABSTRACT BLUE FLOWING LINE ARTWORK (INFINITY SVG PATHS)
@@ -149,20 +200,8 @@ export const HeroSlider: React.FC = () => {
       onMouseMove={handleMouseMove}
       className="hero-logo-bg relative text-slate-800 overflow-hidden pt-10 pb-16 sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-28 border-b border-sky-100/80"
     >
-      {/* Background Video */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-65 mix-blend-multiply scale-105"
-        >
-          <source src="/Create_intro_video_e-commerce_202608030043.mp4" type="video/mp4" />
-        </video>
-        {/* Soft Glass Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/20 to-white/60 backdrop-blur-[1px]" />
-      </div>
+      {/* Background Video (Memoized) */}
+      <HeroBackgroundVideo />
 
       {/* 1. Abstract Flowing SVG Line Artwork */}
       <FloatingPaths />
