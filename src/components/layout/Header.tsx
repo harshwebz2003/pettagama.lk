@@ -49,6 +49,7 @@ export const Header: React.FC = () => {
   };
 
   return (
+    <>
     <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-rose-100/60 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 gap-4 lg:gap-8">
@@ -202,48 +203,81 @@ export const Header: React.FC = () => {
           </form>
         </div>
       </div>
+    </header>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer — outside <header> to escape sticky stacking context */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 flex lg:hidden">
-          <div className="fixed inset-0 bg-black/30 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
+        <div className="fixed inset-0 z-[999] flex lg:hidden">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          {/* Drawer Panel */}
           <div className="relative w-4/5 max-w-sm bg-white h-full shadow-2xl flex flex-col z-10 overflow-y-auto border-r border-rose-100">
+            {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-rose-100 bg-[#fdf8f5]">
               <PettagamaLogo />
-              <button onClick={() => setIsMobileMenuOpen(false)} className="p-1 rounded-lg hover:bg-rose-50">
-                <X className="w-6 h-6 text-slate-500" />
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-2 rounded-xl hover:bg-rose-100 transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="w-5 h-5 text-slate-500" />
               </button>
             </div>
-            <div className="p-4 divide-y divide-rose-100">
-              <div className="py-2 space-y-1">
-                {[
-                  { href: '/', label: 'Home' },
-                  { href: '/shop', label: 'Shop All Products' },
-                  { href: '/track-order', label: 'Track Order' },
-                  { href: '/about', label: 'About Pettagama.lk' },
-                  { href: '/contact', label: 'Contact Us' },
-                ].map((link) => (
-                  <Link key={link.href} href={link.href} onClick={() => setIsMobileMenuOpen(false)}
-                    className="block px-3 py-2.5 rounded-xl text-xs font-bold text-slate-600 hover:bg-amber-50 hover:text-amber-700">
-                    {link.label}
+
+            {/* Nav Links */}
+            <div className="p-4 flex flex-col gap-1">
+              {[
+                { href: '/', label: '🏠  Home' },
+                { href: '/shop', label: '🛍️  Shop All Products' },
+                { href: '/track-order', label: '📦  Track Order' },
+                { href: '/about', label: 'ℹ️  About Pettagama.lk' },
+                { href: '/contact', label: '📍  Contact Us' },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-4 py-3 rounded-xl text-sm font-bold text-slate-700 hover:bg-amber-50 hover:text-amber-700 transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              {/* WhatsApp Catalog */}
+              <a
+                href="https://wa.me/c/130129573445815"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-4 py-3 rounded-xl text-sm font-extrabold text-emerald-600 bg-emerald-50 hover:bg-emerald-100 transition-colors border border-emerald-200 mt-2"
+              >
+                📱  WhatsApp Catalog
+              </a>
+            </div>
+
+            {/* Categories */}
+            <div className="px-4 pb-24">
+              <h4 className="text-[10px] font-black text-amber-600 uppercase tracking-widest mb-3 px-1 border-l-2 border-amber-400 pl-2">
+                Shop By Category
+              </h4>
+              <div className="grid grid-cols-2 gap-1.5">
+                {categories.map((cat) => (
+                  <Link
+                    key={cat.id}
+                    href={`/category/${cat.slug}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-600 hover:text-amber-700 hover:bg-amber-50 transition-colors border border-rose-100 bg-[#fdf8f5]"
+                  >
+                    {cat.name}
                   </Link>
                 ))}
-              </div>
-              <div className="py-4">
-                <h4 className="px-3 text-[10px] font-bold text-amber-600 uppercase tracking-widest mb-2">Shop By Category</h4>
-                <div className="space-y-1">
-                  {categories.map((cat) => (
-                    <Link key={cat.id} href={`/category/${cat.slug}`} onClick={() => setIsMobileMenuOpen(false)}
-                      className="block px-3 py-2 text-xs text-slate-500 hover:text-amber-700 hover:bg-amber-50/60 rounded-lg">
-                      {cat.name}
-                    </Link>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 };
