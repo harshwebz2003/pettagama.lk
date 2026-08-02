@@ -25,7 +25,7 @@ export const AcceptedPaymentMethods: React.FC<AcceptedPaymentMethodsProps> = ({
       {/* Payment Logos Row */}
       <div className="flex flex-wrap items-center justify-center gap-5">
 
-        {/* PayHere Official Short Banner */}
+        {/* PayHere Official Banner PNG */}
         <a
           href="https://www.payhere.lk"
           target="_blank"
@@ -33,12 +33,12 @@ export const AcceptedPaymentMethods: React.FC<AcceptedPaymentMethodsProps> = ({
           title="PayHere — Secure Online Payments"
           className="hover:opacity-90 transition-opacity flex items-center justify-center max-w-full"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://www.payhere.lk/downloads/images/payhere_short_banner.png"
+          <Image
+            src="/payments/payhere.png"
             alt="PayHere"
             width={700}
-            className="w-full max-w-[700px] h-auto object-contain drop-shadow-sm"
+            height={200}
+            className="w-full max-w-[500px] sm:max-w-[650px] h-auto object-contain drop-shadow-sm"
           />
         </a>
 
