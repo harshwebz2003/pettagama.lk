@@ -87,72 +87,6 @@ const HeroBackgroundVideo = memo(() => {
 
 HeroBackgroundVideo.displayName = 'HeroBackgroundVideo';
 
-/* ============================================================
-   ABSTRACT BLUE FLOWING LINE ARTWORK (INFINITY SVG PATHS)
-   ============================================================ */
-function FloatingPaths() {
-  const paths = Array.from({ length: 36 }, (_, i) => {
-    const scale = 170 + i * 11;
-    const offsetX = 348;
-    const offsetY = 158;
-
-    const d = `
-      M ${offsetX - scale} ${offsetY}
-      C ${offsetX - scale} ${offsetY - scale * 0.5}, 
-        ${offsetX - scale * 0.5} ${offsetY - scale * 0.5}, 
-        ${offsetX} ${offsetY}
-      C ${offsetX + scale * 0.5} ${offsetY + scale * 0.5}, 
-        ${offsetX + scale} ${offsetY + scale * 0.5}, 
-        ${offsetX + scale} ${offsetY}
-      C ${offsetX + scale} ${offsetY - scale * 0.5}, 
-        ${offsetX + scale * 0.5} ${offsetY - scale * 0.5}, 
-        ${offsetX} ${offsetY}
-      C ${offsetX - scale * 0.5} ${offsetY + scale * 0.5}, 
-        ${offsetX - scale} ${offsetY + scale * 0.5}, 
-        ${offsetX - scale} ${offsetY}
-    `.replace(/\s+/g, ' ').trim();
-
-    return {
-      id: i,
-      d,
-      width: 0.5 + i * 0.035,
-    };
-  });
-
-  return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden z-[1]">
-      <svg
-        className="w-full h-full text-[#29ABE2]"
-        viewBox="0 0 696 316"
-        fill="none"
-      >
-        <title>Flowing Infinity Paths</title>
-        {paths.map((path, index) => (
-          <motion.path
-            key={path.id}
-            d={path.d}
-            stroke="currentColor"
-            strokeWidth={path.width}
-            strokeOpacity={0.14 + path.id * 0.015}
-            fill="none"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{
-              pathLength: [0, 1, 1, 0],
-              opacity: [0, 0.75, 0.75, 0],
-            }}
-            transition={{
-              duration: 15 + index * 0.45,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "easeInOut",
-              delay: index * 0.15,
-            }}
-          />
-        ))}
-      </svg>
-    </div>
-  );
-}
-
 const heroSlides = [
   {
     id: 1,
@@ -232,9 +166,6 @@ export const HeroSlider: React.FC = () => {
     >
       {/* Background Video (Memoized) */}
       <HeroBackgroundVideo />
-
-      {/* 1. Abstract Flowing SVG Line Artwork */}
-      <FloatingPaths />
 
       {/* 2. Layered Blurred Blobs & Light Effects */}
       <div className="absolute top-1/4 -left-24 w-[420px] h-[420px] bg-[#7FCDFF]/45 rounded-full blur-[140px] pointer-events-none animate-blob z-[1]" />
