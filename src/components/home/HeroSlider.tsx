@@ -58,7 +58,7 @@ const HeroBackgroundVideo = memo(() => {
         onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
         className="hidden md:block w-full h-full object-cover opacity-85 mix-blend-multiply scale-105 transform-gpu will-change-transform"
       >
-        <source src="/Create_intro_video_e-commerce_202608030043.mp4" type="video/mp4" />
+        <source src="/Intro_video_for_පෙට්ටගම.LK_202608030112.mp4" type="video/mp4" />
       </video>
 
       {/* Mobile Video (Portrait 9:16) */}
