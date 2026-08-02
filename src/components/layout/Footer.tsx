@@ -9,12 +9,12 @@ import { AcceptedPaymentMethods } from '../common/AcceptedPaymentMethods';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-16 pb-24 lg:pb-12 border-t border-slate-800">
+    <footer className="bg-slate-950 text-slate-300 pt-16 pb-24 lg:pb-12 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top 4 Benefits Banner */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pb-12 mb-12 border-b border-slate-800 text-center md:text-left">
-          <div className="flex items-center space-x-4 p-4 rounded-2xl bg-slate-800/50 border border-slate-700/50">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pb-12 mb-12 border-b border-slate-800/80 text-center md:text-left">
+          <div className="flex items-center space-x-4 p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
             <div className="p-3 rounded-xl bg-royal-600/20 text-royal-400 shrink-0">
               <Truck className="w-6 h-6" />
             </div>
@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-center space-x-4 p-4 rounded-2xl bg-slate-800/50 border border-slate-700/50">
+          <div className="flex items-center space-x-4 p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
             <div className="p-3 rounded-xl bg-emerald-600/20 text-emerald-400 shrink-0">
               <ShieldCheck className="w-6 h-6" />
             </div>
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-center space-x-4 p-4 rounded-2xl bg-slate-800/50 border border-slate-700/50">
+          <div className="flex items-center space-x-4 p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
             <div className="p-3 rounded-xl bg-amber-600/20 text-amber-400 shrink-0">
               <RefreshCw className="w-6 h-6" />
             </div>
@@ -44,8 +44,8 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-center space-x-4 p-4 rounded-2xl bg-slate-800/50 border border-slate-700/50">
-            <div className="p-3 rounded-xl bg-pink-600/20 text-pink-400 shrink-0">
+          <div className="flex items-center space-x-4 p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+            <div className="p-3 rounded-xl bg-rose-600/20 text-rose-400 shrink-0">
               <MessageCircle className="w-6 h-6" />
             </div>
             <div>
@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
           {/* Col 1: Store Details */}
           <div className="lg:col-span-2 space-y-4">
             <PettagamaLogo />
-            <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
+            <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
               Everything you need for your creativity! Pettagama.lk is Sri Lanka’s premier destination for high quality resin crafts, moulds, clay, pipe cleaners, beads, embroidery, fashion jewellery, and gift items.
             </p>
             
@@ -91,7 +91,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 2: Top Categories */}
           <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-royal-500 pl-2">
+            <h4 className="text-xs font-black text-amber-400 uppercase tracking-widest mb-4 border-l-2 border-amber-400 pl-2">
               Popular Craft Categories
             </h4>
             <ul className="space-y-2 text-xs">
@@ -107,7 +107,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 3: Customer Services */}
           <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-royal-500 pl-2">
+            <h4 className="text-xs font-black text-amber-400 uppercase tracking-widest mb-4 border-l-2 border-amber-400 pl-2">
               Customer Services
             </h4>
             <ul className="space-y-2 text-xs">
@@ -146,7 +146,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 4: About & Store */}
           <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-royal-500 pl-2">
+            <h4 className="text-xs font-black text-amber-400 uppercase tracking-widest mb-4 border-l-2 border-amber-400 pl-2">
               About Pettagama.lk
             </h4>
             <ul className="space-y-2 text-xs">
@@ -170,7 +170,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Accepted Payment Methods Section */}
-        <div className="py-8 border-b border-slate-800 bg-slate-900/60 rounded-2xl my-6 p-4">
+        <div className="py-6 border-b border-slate-800 bg-slate-900/60 rounded-2xl my-6 p-4">
           <AcceptedPaymentMethods variant="footer" />
         </div>
 
@@ -181,7 +181,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* REQUIRED AGENCY CREDIT LABEL */}
-          <div className="bg-slate-800/80 px-3 py-1.5 rounded-full border border-slate-700 text-royal-300 text-[11px] font-medium">
+          <div className="bg-slate-900/90 px-3.5 py-1.5 rounded-full border border-slate-800 text-royal-300 text-[11px] font-medium">
             Concept Website Demo by Harsh Apex Digital Solutions
           </div>
         </div>

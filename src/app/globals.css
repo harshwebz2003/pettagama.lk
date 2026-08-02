@@ -4,130 +4,139 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 215 25% 20%;
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
   }
 
   body {
-    @apply bg-rose-50 text-slate-800 antialiased font-sans selection:bg-royal-400 selection:text-white overflow-x-hidden;
+    @apply bg-slate-950 text-slate-100 antialiased font-sans selection:bg-royal-500 selection:text-white overflow-x-hidden;
   }
 }
 
-/* Soft Scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #fdf4ff;
+  background: #0b0f19;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c4b5d4;
-  border-radius: 6px;
+  background: #1e293b;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #a78cb9;
+  background: #2563eb;
 }
 
-/* Soft Float Animation */
-@keyframes floatSoft {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+/* Keyframe Animations */
+@keyframes ambientBlob {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.35;
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.12);
+    opacity: 0.55;
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+    opacity: 0.4;
+  }
 }
 
-/* Warm Shimmer */
-@keyframes warmShimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+@keyframes textGradientShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Petal Drift */
-@keyframes petalDrift {
-  0% { transform: translateX(-10px) translateY(0) rotate(0deg); opacity: 0; }
-  20% { opacity: 1; }
-  80% { opacity: 0.7; }
-  100% { transform: translateX(10px) translateY(-80px) rotate(20deg); opacity: 0; }
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
 }
 
-/* Glow Pulse */
-@keyframes softPulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(219, 112, 147, 0.25); }
-  50% { box-shadow: 0 0 40px rgba(219, 112, 147, 0.5); }
+@keyframes buttonGlowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(249, 115, 22, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(37, 99, 235, 0.7), 0 0 60px rgba(249, 115, 22, 0.4);
+  }
 }
 
-/* Ambient Glow */
-@keyframes ambientGlow {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.08); }
+/* Animated Utility Classes */
+.animate-blob {
+  animation: ambientBlob 12s ease-in-out infinite;
 }
 
-/* Utility Animation Classes */
-.animate-float {
-  animation: floatSoft 5s ease-in-out infinite;
+.animate-float-gentle {
+  animation: floatGentle 6s ease-in-out infinite;
 }
 
-.animate-ambient {
-  animation: ambientGlow 7s ease-in-out infinite;
+.animate-glow-pulse {
+  animation: buttonGlowPulse 3s infinite;
 }
 
-.animate-pulse-glow {
-  animation: softPulse 2.5s ease-in-out infinite;
-}
-
-/* Warm Text Shimmer */
-.text-shimmer {
-  background: linear-gradient(90deg, #1e3a8a 0%, #7c3aed 35%, #db7093 65%, #1e3a8a 100%);
-  background-size: 200% 100%;
+/* Linear & Apple Gradient Text Styles */
+.text-shimmer-luxury {
+  background: linear-gradient(135deg, #ffffff 0%, #93c5fd 35%, #ff7e67 70%, #ffffff 100%);
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: warmShimmer 5s linear infinite;
+  animation: textGradientShimmer 6s ease infinite;
 }
 
-.text-gradient-gold {
-  background: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #fbbf24 100%);
+.text-gradient-coral {
+  background: linear-gradient(135deg, #ff7e67 0%, #f97316 50%, #e11d48 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-rose {
-  background: linear-gradient(135deg, #db7093 0%, #e879a6 50%, #db7093 100%);
+.text-gradient-royal {
+  background: linear-gradient(135deg, #60a5fa 0%, #2563eb 50%, #1d4ed8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Soft Glassmorphism */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(219, 112, 147, 0.15);
-}
-
-.glass-panel-light {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+/* Luxury Glassmorphism Utilities */
+.glass-header {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .glass-card-dark {
-  background: linear-gradient(135deg, rgba(30, 58, 138, 0.08) 0%, rgba(124, 58, 237, 0.06) 100%);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(219, 112, 147, 0.2);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Soft Border Glow */
-.neon-border-royal {
-  box-shadow: 0 0 18px rgba(37, 99, 235, 0.18);
+/* Glow Borders */
+.glow-border-royal {
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.3), inset 0 0 15px rgba(37, 99, 235, 0.2);
 }
 
-.neon-border-red {
-  box-shadow: 0 0 18px rgba(219, 112, 147, 0.3);
+.glow-border-coral {
+  box-shadow: 0 0 25px rgba(255, 126, 103, 0.35), inset 0 0 15px rgba(255, 126, 103, 0.2);
 }
-
-/* Soft Section Background Utilities */
-.bg-soft-cream { background-color: #fdf8f0; }
-.bg-soft-rose  { background-color: #fff5f7; }
-.bg-soft-lavender { background-color: #f5f3ff; }
-.bg-soft-blue  { background-color: #eff6ff; }
-.bg-soft-mint  { background-color: #f0fdf4; }

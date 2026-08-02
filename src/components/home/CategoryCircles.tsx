@@ -8,26 +8,29 @@ import { categories } from '@/data/categories';
 
 export const CategoryCircles: React.FC = () => {
   return (
-    <section id="categories" className="py-14 sm:py-20 bg-gradient-to-br from-purple-50 via-white to-rose-50 border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="categories" className="py-16 sm:py-24 bg-slate-950 text-white border-b border-slate-800 relative overflow-hidden">
+      
+      {/* Soft background glow */}
+      <div className="absolute top-1/2 right-0 w-80 h-80 bg-royal-600/10 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-4">
           <div>
-            <p className="text-xs font-extrabold text-royal-500 uppercase tracking-widest mb-1">✦ Explore Our Collections</p>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-800 tracking-tight">
+            <span className="text-xs font-black text-royal-400 uppercase tracking-widest block mb-1">
+              ✦ EXPLORE CRAFT UNIVERSE
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
               Shop by Craft Category
             </h2>
           </div>
-          <div className="flex items-center space-x-2">
-            <span className="text-[10px] font-bold text-slate-400 sm:hidden">Swipe 👉</span>
-            <Link
-              href="/shop"
-              className="text-xs font-black text-royal-600 hover:text-royal-700 transition-colors flex items-center space-x-1 bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-sm shrink-0"
-            >
-              <span>Browse All {categories.length} Categories →</span>
-            </Link>
-          </div>
+          <Link
+            href="/shop"
+            className="text-xs font-black text-royal-400 hover:text-royal-300 transition-colors flex items-center space-x-1 glass-button px-4 py-2.5 rounded-xl border border-royal-500/30 shrink-0"
+          >
+            <span>Browse All {categories.length} Categories →</span>
+          </Link>
         </div>
 
         {/* Circular Category Row / Grid (Swipeable on Mobile) */}
@@ -39,34 +42,35 @@ export const CategoryCircles: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.04 }}
-              className="min-w-[85px] sm:min-w-0 snap-start shrink-0"
+              className="min-w-[90px] sm:min-w-0 snap-start shrink-0"
             >
               <Link
                 href={`/category/${category.slug}`}
-                className="group flex flex-col items-center text-center space-y-2.5"
+                className="group flex flex-col items-center text-center space-y-3"
               >
-                {/* Circle image */}
-                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-transparent group-hover:border-royal-400 transition-all duration-300 shadow-md group-hover:shadow-royal-200 group-hover:scale-110">
+                {/* 3D Floating Circle image */}
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-slate-800 group-hover:border-royal-400 transition-all duration-300 shadow-xl group-hover:shadow-[0_0_25px_rgba(37,99,235,0.4)] group-hover:scale-110">
                   <Image
                     src={category.image}
                     alt={category.name}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  {/* Soft overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 group-hover:to-black/0 transition-all" />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950/60 group-hover:to-transparent transition-all" />
                 </div>
 
                 <div>
-                  <h3 className="text-[11px] sm:text-xs font-extrabold text-slate-700 group-hover:text-royal-700 transition-colors leading-tight line-clamp-2">
+                  <h3 className="text-[11px] sm:text-xs font-bold text-slate-200 group-hover:text-amber-400 transition-colors leading-tight line-clamp-2">
                     {category.name}
                   </h3>
-                  <span className="text-[10px] text-slate-400 block mt-0.5">{category.itemCount} items</span>
+                  <span className="text-[10px] text-slate-500 block mt-0.5 font-medium">{category.itemCount} items</span>
                 </div>
               </Link>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
